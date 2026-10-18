@@ -43,6 +43,12 @@
     <Filter Include="Fichiers sources\Object\Component">
       <UniqueIdentifier>{ddaf1452-4b9c-4a78-9f26-bdd1855d7d7e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Object\Component\Graphics">
+      <UniqueIdentifier>{c9907e2c-36b4-4830-acb0-9120c314dbc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Object\Component\Graphics">
+      <UniqueIdentifier>{ea5b59a6-908f-4d7a-bae5-508301894fa8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Loop.cpp">
@@ -63,6 +69,12 @@
     <ClCompile Include="src\GameObject.cpp">
       <Filter>Fichiers sources\Object</Filter>
     </ClCompile>
+    <ClCompile Include="src\Component.cpp">
+      <Filter>Fichiers sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RenderComp.cpp">
+      <Filter>Fichiers sources\Object\Component\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Loop.h">
@@ -82,6 +94,12 @@
     </ClInclude>
     <ClInclude Include="include\GameObject.h">
       <Filter>Fichiers d%27en-tête\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Component.h">
+      <Filter>Fichiers d%27en-tête\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RenderComp.h">
+      <Filter>Fichiers d%27en-tête\Object\Component\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

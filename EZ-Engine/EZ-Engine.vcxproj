@@ -146,19 +146,23 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Component.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameObject.cpp" />
     <ClCompile Include="src\GameScene.cpp" />
     <ClCompile Include="src\Input.cpp" />
     <ClCompile Include="src\Loop.cpp" />
+    <ClCompile Include="src\RenderComp.cpp" />
     <ClCompile Include="src\Systeme.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Component.h" />
     <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\GameObject.h" />
     <ClInclude Include="include\GameScene.h" />
     <ClInclude Include="include\Input.h" />
     <ClInclude Include="include\Loop.h" />
+    <ClInclude Include="include\RenderComp.h" />
     <ClInclude Include="include\Systeme.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

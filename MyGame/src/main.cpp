@@ -1,10 +1,10 @@
 #include <Loop.h>
-#include <Game.h>
+#include <ExempleGame.h>
 
 int main()
 {
-	Loop myLoop = Loop("MyGame");
-	myLoop.SetGame(new Game());
+	Loop myLoop = Loop("ExempleGame");
+	myLoop.SetGame(new ExempleGame());
 	myLoop.Run();
 	return 0;
 }

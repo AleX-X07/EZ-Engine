@@ -12,7 +12,7 @@ private:
 
 public:
 	Game();
-	~Game();
+	virtual ~Game();
 
 	void AddScene(std::string name);
 	void SetCurrentScene(std::string name);
