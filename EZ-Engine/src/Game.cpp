@@ -19,6 +19,7 @@ void Game::AddScene(std::string name)
 {
 	GameScene* newScene = new GameScene(name);
 	myScenes.push_back(newScene);
+	SetCurrentScene(name);
 }
 
 void Game::SetCurrentScene(std::string name)
