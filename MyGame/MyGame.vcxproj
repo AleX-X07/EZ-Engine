@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\ExempleGame.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\movement.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EZ-Engine\EZ-Engine.vcxproj">
@@ -29,6 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ExempleGame.h" />
+    <ClInclude Include="include\movement.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>

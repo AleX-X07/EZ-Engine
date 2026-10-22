@@ -23,8 +23,10 @@ void Loop::SetGame(Game* newGame)
 
 void Loop::UpdateEvent()
 {
+	m_systeme->m_input->Reset();
 	while (const std::optional event = m_window->pollEvent())
 	{
+		m_systeme->m_input->SetEvent(event);
 		if (event->is<sf::Event::Closed>())
 		{
 			m_window->close();

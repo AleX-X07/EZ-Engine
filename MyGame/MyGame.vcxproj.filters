@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Component">
+      <UniqueIdentifier>{4ae11613-a188-4834-b7ad-06c09ace1587}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Compnent">
+      <UniqueIdentifier>{9212b43b-7fbb-4235-95dc-861f8653cb5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Component\Character">
+      <UniqueIdentifier>{11d209f6-7575-4b9a-acf0-fdfebce6d844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Compnent\Character">
+      <UniqueIdentifier>{1fe9ec52-a5f6-47ad-bdda-b2c820913e62}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -21,10 +33,16 @@
     <ClCompile Include="src\ExempleGame.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="src\movement.cpp">
+      <Filter>Fichiers sources\Compnent\Character</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ExempleGame.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="include\movement.h">
+      <Filter>Fichiers d%27en-tête\Component\Character</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
