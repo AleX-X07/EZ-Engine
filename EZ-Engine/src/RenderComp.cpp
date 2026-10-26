@@ -37,6 +37,21 @@ void RenderComp::SetColor(sf::Color color)
 	m_rect.setFillColor(m_color);
 }
 
+sf::Texture* RenderComp::GetTexture()
+{
+	return m_texture;
+}
+
+sf::Color& RenderComp::GetColor()
+{
+	return m_color;
+}
+
+sf::RectangleShape& RenderComp::GetRect()
+{
+	return m_rect;
+}
+
 void RenderComp::Update(float dt, Systeme* m_systeme)
 {
 	auto pos = owner->GetTransform();

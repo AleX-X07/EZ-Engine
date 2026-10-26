@@ -33,7 +33,7 @@ bool Input::IsMousePressed(sf::Mouse::Button y_mouse)
 
 bool Input::IsKeyHeld(sf::Keyboard::Key y_key)
 {
-	return m_key == y_key;
+	return sf::Keyboard::isKeyPressed(y_key);
 }
 
 bool Input::IsMouseHeld(sf::Mouse::Button y_mouse)

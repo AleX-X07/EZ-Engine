@@ -1,6 +1,6 @@
 #include "Game.h"
 
-Game::Game() : current_scene(nullptr)
+Game::Game() : current_scene(nullptr), m_window(nullptr)
 {
 }
 
@@ -13,6 +13,11 @@ Game::~Game()
 	}
 	myScenes.clear();
 	current_scene = nullptr;
+}
+
+void Game::SetWindow(sf::RenderWindow* y_window)
+{
+	m_window = y_window;
 }
 
 void Game::AddScene(std::string name)
@@ -46,11 +51,11 @@ void Game::Update(float dt, Systeme* m_systeme)
 	}
 }
 
-void Game::Render(sf::RenderWindow* m_window)
+void Game::Render(sf::RenderWindow* y_window)
 {
 	if (current_scene != nullptr)
 	{
-		current_scene->Render(m_window);
+		current_scene->Render(y_window);
 	}
 }
 
@@ -64,4 +69,9 @@ GameScene* Game::GetScene(std::string name)
 		}
 	}
 	return nullptr;
+}
+
+sf::RenderWindow* Game::GetWindow()
+{
+	return m_window;
 }

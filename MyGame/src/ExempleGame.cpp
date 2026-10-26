@@ -18,6 +18,8 @@ void ExempleGame::Init()
 
 	// Creating Object
 	auto* m_scene = GetScene("Test");
+
+	// Character
 	{
 		m_scene->AddObject("Obj");
 		auto* obj1 = m_scene->GetObject("Obj");
@@ -31,6 +33,22 @@ void ExempleGame::Init()
 		// Movement
 		float speed = 100.0f;
 		auto movement = obj1->AddComponent<Movement>(speed);
+	}
+
+	// Background
+	{
+		m_scene->AddObject("Back");
+
+		auto* back = m_scene->GetObject("Back");
+		
+		auto winSize = sf::Vector2f(GetWindow()->getSize());
+		back->GetSize() = winSize;
+		back->GetTransform() = winSize / 2.f;
+
+		// Creating Components
+		// Render
+		auto render = back->AddComponent<RenderComp>();
+		render->SetTexture("../EZ-Engine/assets-debug/background.png");
 	}
 }
 

@@ -17,10 +17,21 @@ GameScene::~GameScene()
 	myObjects.clear();
 }
 
+void GameScene::ChangeDefaultLayer(unsigned int m_layer)
+{
+	m_default_layer = m_layer;
+}
+
 void GameScene::AddObject(std::string name)
 {
 	GameObject* newObjt = new GameObject(name);
 	myObjects.push_back(newObjt);
+	layer[m_default_layer].push_back(newObjt);
+}
+
+void GameScene::SetLayer(unsigned int emplace, GameObject* obj)
+{
+	layer[emplace].push_back(obj);
 }
 
 void GameScene::Update(float dt, Systeme* m_systeme)
@@ -36,11 +47,17 @@ void GameScene::Update(float dt, Systeme* m_systeme)
 
 void GameScene::Render(sf::RenderWindow* m_window)
 {
-	if (!myObjects.empty())
+	if (!layer.empty())
 	{
-		for (auto& obj : myObjects)
+		for (auto& l : layer)
 		{
-			obj->Render(m_window);
+			if (!l.empty())
+			{
+				for (auto& obj : l)
+				{
+					obj->Render(m_window);
+				}
+			}
 		}
 	}
 }
