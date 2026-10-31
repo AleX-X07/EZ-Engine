@@ -1,10 +1,12 @@
 #include <GameScene.h>
 
 #include <Systeme.h>
+#include <RenderComp.h>
+
+#include <map>
 
 GameScene::GameScene(std::string _name) : name(_name)
 {
-
 }
 
 GameScene::~GameScene()
@@ -14,24 +16,12 @@ GameScene::~GameScene()
 		delete obj;
 		obj = nullptr;
 	}
-	myObjects.clear();
-}
-
-void GameScene::ChangeDefaultLayer(unsigned int m_layer)
-{
-	m_default_layer = m_layer;
 }
 
 void GameScene::AddObject(std::string name)
 {
 	GameObject* newObjt = new GameObject(name);
 	myObjects.push_back(newObjt);
-	layer[m_default_layer].push_back(newObjt);
-}
-
-void GameScene::SetLayer(unsigned int emplace, GameObject* obj)
-{
-	layer[emplace].push_back(obj);
 }
 
 void GameScene::Update(float dt, Systeme* m_systeme)
@@ -46,18 +36,22 @@ void GameScene::Update(float dt, Systeme* m_systeme)
 }
 
 void GameScene::Render(sf::RenderWindow* m_window)
-{
-	if (!layer.empty())
+{	
+	std::map<int, std::vector<GameObject*>> m_render;
+
+	for (auto* obj : myObjects)
 	{
-		for (auto& l : layer)
+		if (auto* comp = obj->GetComponent<RenderComp>())
 		{
-			if (!l.empty())
-			{
-				for (auto& obj : l)
-				{
-					obj->Render(m_window);
-				}
-			}
+			m_render[comp->GetOrder()].push_back(obj);
+		}
+	}
+
+	for (auto& [order, comps] : m_render)
+	{
+		for (auto* comp : comps)
+		{
+			comp->Render(m_window);
 		}
 	}
 }

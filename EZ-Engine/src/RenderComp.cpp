@@ -37,19 +37,29 @@ void RenderComp::SetColor(sf::Color color)
 	m_rect.setFillColor(m_color);
 }
 
-sf::Texture* RenderComp::GetTexture()
+void RenderComp::SetOrder(int& n_order)
+{
+	m_order = n_order;
+}
+
+const sf::Texture* RenderComp::GetTexture() const
 {
 	return m_texture;
 }
 
-sf::Color& RenderComp::GetColor()
+const sf::Color& RenderComp::GetColor() const
 {
 	return m_color;
 }
 
-sf::RectangleShape& RenderComp::GetRect()
+const sf::RectangleShape& RenderComp::GetRect() const
 {
 	return m_rect;
+}
+
+const int& RenderComp::GetOrder() const
+{
+	return m_order;
 }
 
 void RenderComp::Update(float dt, Systeme* m_systeme)
