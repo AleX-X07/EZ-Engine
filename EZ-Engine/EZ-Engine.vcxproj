@@ -149,6 +149,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\BoxCollider.cpp" />
     <ClCompile Include="src\Component.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameObject.cpp" />
@@ -159,6 +160,7 @@
     <ClCompile Include="src\Systeme.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\BoxCollider.h" />
     <ClInclude Include="include\Component.h" />
     <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\GameObject.h" />

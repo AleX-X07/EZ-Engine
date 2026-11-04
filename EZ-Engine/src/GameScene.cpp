@@ -17,10 +17,11 @@ GameScene::~GameScene()
 	}
 }
 
-void GameScene::AddObject(std::string name)
+GameObject* GameScene::AddObject(std::string name)
 {
 	GameObject* newObjt = new GameObject(name);
 	myObjects.push_back(newObjt);
+	return newObjt;
 }
 
 void GameScene::Update(float dt, Systeme* m_systeme)
@@ -74,4 +75,9 @@ GameObject* GameScene::GetObject(std::string name)
 std::string& GameScene::GetName()
 {
 	return name;
+}
+
+std::vector<GameObject*>& GameScene::GetListObject()
+{
+	return myObjects;
 }

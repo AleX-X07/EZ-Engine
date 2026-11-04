@@ -49,6 +49,12 @@
     <Filter Include="Fichiers d%27en-tête\Object\Component\Graphics">
       <UniqueIdentifier>{ea5b59a6-908f-4d7a-bae5-508301894fa8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Object\Component\physics">
+      <UniqueIdentifier>{b12c6dc0-5390-459b-a806-ec9b1595841b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Object\Component\physics">
+      <UniqueIdentifier>{9f6ced62-34b5-443c-9130-903f5d66dbfd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Loop.cpp">
@@ -75,6 +81,9 @@
     <ClCompile Include="src\RenderComp.cpp">
       <Filter>Fichiers sources\Object\Component\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="src\BoxCollider.cpp">
+      <Filter>Fichiers sources\Object\Component\physics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Loop.h">
@@ -100,6 +109,9 @@
     </ClInclude>
     <ClInclude Include="include\RenderComp.h">
       <Filter>Fichiers d%27en-tête\Object\Component\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BoxCollider.h">
+      <Filter>Fichiers d%27en-tête\Object\Component\physics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
