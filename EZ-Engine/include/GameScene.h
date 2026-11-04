@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 
 #include <GameObject.h>
+#include <map>
 
 class Systeme;
 
@@ -11,6 +12,9 @@ private:
 	std::string name;
 
 	std::vector<GameObject*> myObjects;
+
+	std::map<int, std::vector<GameObject*>> m_render;
+	bool m_render_sorted = false;
 
 public:
 	GameScene(std::string _name);

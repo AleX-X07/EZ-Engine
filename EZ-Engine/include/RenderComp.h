@@ -20,7 +20,7 @@ public:
 
 	void SetTexture(std::string path);
 	void SetColor(sf::Color color);
-	void SetOrder(int& n_order);
+	void SetOrder(int n_order);
 
 	const sf::Texture* GetTexture() const;
 	const sf::Color& GetColor() const;

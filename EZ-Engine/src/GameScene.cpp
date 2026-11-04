@@ -3,7 +3,6 @@
 #include <Systeme.h>
 #include <RenderComp.h>
 
-#include <map>
 
 GameScene::GameScene(std::string _name) : name(_name)
 {
@@ -36,15 +35,17 @@ void GameScene::Update(float dt, Systeme* m_systeme)
 }
 
 void GameScene::Render(sf::RenderWindow* m_window)
-{	
-	std::map<int, std::vector<GameObject*>> m_render;
-
-	for (auto* obj : myObjects)
+{
+	if (!m_render_sorted)
 	{
-		if (auto* comp = obj->GetComponent<RenderComp>())
+		for (auto* obj : myObjects)
 		{
-			m_render[comp->GetOrder()].push_back(obj);
+			if (auto* comp = obj->GetComponent<RenderComp>())
+			{
+				m_render[comp->GetOrder()].push_back(obj);
+			}
 		}
+		m_render_sorted = true;
 	}
 
 	for (auto& [order, comps] : m_render)

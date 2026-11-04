@@ -37,7 +37,7 @@ void RenderComp::SetColor(sf::Color color)
 	m_rect.setFillColor(m_color);
 }
 
-void RenderComp::SetOrder(int& n_order)
+void RenderComp::SetOrder(int n_order)
 {
 	m_order = n_order;
 }

@@ -30,6 +30,8 @@ void ExempleGame::Init()
 		// Render
 		auto render = obj1->AddComponent<RenderComp>();
 		render->SetTexture("../EZ-Engine/assets-debug/red_block.png");
+		render->SetOrder(10);
+
 		// Movement
 		float speed = 100.0f;
 		auto movement = obj1->AddComponent<Movement>(speed);
@@ -49,6 +51,7 @@ void ExempleGame::Init()
 		// Render
 		auto render = back->AddComponent<RenderComp>();
 		render->SetTexture("../EZ-Engine/assets-debug/background.png");
+		render->SetOrder(0);
 	}
 }
 
