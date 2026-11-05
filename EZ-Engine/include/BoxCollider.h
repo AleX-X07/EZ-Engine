@@ -1,4 +1,6 @@
 #pragma once
+#include <cmath>
+
 #include <GameScene.h>
 
 #include <Component.h>
@@ -14,6 +16,7 @@ private:
 
 public:
 	bool isTrigger = false;
+	bool isStatic = false;
 
 public:
 	BoxCollider(GameObject* _owner);
@@ -23,6 +26,8 @@ public:
 	void SetSize(sf::Vector2f _size);
 
 	void Debug();
+
+	// Need func OnTrigger enter/leave/stay
 
 	virtual void Update(float dt, Systeme* m_systeme) override;
 	virtual void Render(sf::RenderWindow* m_window) override;

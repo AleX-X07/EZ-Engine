@@ -33,7 +33,7 @@ void ExempleGame::Init()
 		render->SetOrder(10);
 
 		// Movement
-		float speed = 100.0f;
+		float speed = 200.0f;
 		auto movement = obj1->AddComponent<Movement>(speed);
 
 		// BoxCollider
@@ -41,6 +41,7 @@ void ExempleGame::Init()
 		collider->SetListObject(m_scene->GetListObject());
 		collider->SetSize(obj1->GetSize());
 		collider->Debug();
+		collider->isStatic = false;
 	}
 
 	// Background
@@ -77,6 +78,7 @@ void ExempleGame::Init()
 		collider->SetListObject(m_scene->GetListObject());
 		collider->SetSize(wall->GetSize());
 		collider->Debug();
+		collider->isStatic = true;
 	}
 }
 

@@ -49,11 +49,11 @@
     <Filter Include="Fichiers d%27en-tête\Object\Component\Graphics">
       <UniqueIdentifier>{ea5b59a6-908f-4d7a-bae5-508301894fa8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers d%27en-tête\Object\Component\physics">
-      <UniqueIdentifier>{b12c6dc0-5390-459b-a806-ec9b1595841b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\Object\Component\physics">
+    <Filter Include="Fichiers sources\Object\Component\Physics">
       <UniqueIdentifier>{9f6ced62-34b5-443c-9130-903f5d66dbfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Object\Component\Physics">
+      <UniqueIdentifier>{b12c6dc0-5390-459b-a806-ec9b1595841b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -82,7 +82,7 @@
       <Filter>Fichiers sources\Object\Component\Graphics</Filter>
     </ClCompile>
     <ClCompile Include="src\BoxCollider.cpp">
-      <Filter>Fichiers sources\Object\Component\physics</Filter>
+      <Filter>Fichiers sources\Object\Component\Physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -111,7 +111,7 @@
       <Filter>Fichiers d%27en-tête\Object\Component\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="include\BoxCollider.h">
-      <Filter>Fichiers d%27en-tête\Object\Component\physics</Filter>
+      <Filter>Fichiers d%27en-tête\Object\Component\Physics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
