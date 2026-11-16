@@ -72,7 +72,7 @@
     <ClInclude Include="include\ez\components\graphics\camera.h">
       <Filter>Fichiers d%27en-tête\ez\components\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="mainloop.h">
+    <ClInclude Include="include\mainloop.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
@@ -104,7 +104,7 @@
     <ClCompile Include="src\ez\components\graphics\camera.cpp">
       <Filter>Fichiers sources\ez\components\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="mainloop.cpp">
+    <ClCompile Include="src\mainloop.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

@@ -34,11 +34,6 @@ void ez::Game::SetCurrentScene(const std::string& name)
 	}
 }
 
-void ez::Game::SetWindow(sf::RenderWindow* window)
-{
-	m_window = *window;
-}
-
 void ez::Game::Init()
 {
 

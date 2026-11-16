@@ -1,6 +1,6 @@
 #include "ez/Component.h"
 
-ez::Component::Component(GameObject& owner) : m_owner(owner)
+ez::Component::Component(GameObject* owner) : m_owner(owner)
 {
 }
 

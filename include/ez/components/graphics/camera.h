@@ -14,7 +14,7 @@ namespace ez::components::graphics
 		bool haveTarget = false;
 
 	public:
-		Camera(GameObject& owner);
+		Camera(GameObject* owner);
 		~Camera() = default;
 
 		void SetCamera(const sf::Vector2f& size);

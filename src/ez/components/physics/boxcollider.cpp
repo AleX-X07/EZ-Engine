@@ -1,9 +1,9 @@
 #include "ez/components/physics/BoxCollider.h"
 
-ez::components::physics::BoxCollider::BoxCollider(GameObject& owner) : Component(owner)
+ez::components::physics::BoxCollider::BoxCollider(GameObject* owner) : Component(owner)
 {
-	m_rect.setPosition(m_owner.GetTransform());
-	m_rect.setOrigin(m_owner.GetSize() / 2.0f);
+	m_rect.setPosition(m_owner->GetTransform());
+	m_rect.setOrigin(m_owner->GetSize() / 2.0f);
 }
 
 void ez::components::physics::BoxCollider::SetListObject(std::vector<GameObject*>& listobj)
@@ -32,7 +32,7 @@ bool ez::components::physics::BoxCollider::OnTriggerEnter(GameObject& other)
 
 void ez::components::physics::BoxCollider::Update(float dt, systeme::Systeme& m_systeme)
 {
-	m_rect.setPosition(m_owner.GetTransform());
+	m_rect.setPosition(m_owner->GetTransform());
 
 	if (isStatic)
 	{
@@ -43,7 +43,7 @@ void ez::components::physics::BoxCollider::Update(float dt, systeme::Systeme& m_
 	{
 		for (auto& obj : *m_listobj)
 		{
-			if (obj != &m_owner)
+			if (obj != m_owner)
 			{
 				auto comp = obj->GetComponent<BoxCollider>();
 				if (comp)
@@ -119,22 +119,22 @@ void ez::components::physics::BoxCollider::ResolveCollisionAABB(GameObject& othe
 		{
 			if (distX > 0)
 			{
-				m_owner.GetTransform().x = m_target_pos.x + (m_target_size.x / 2.f) + (m_size.x / 2.f);
+				m_owner->GetTransform().x = m_target_pos.x + (m_target_size.x / 2.f) + (m_size.x / 2.f);
 			}
 			else
 			{
-				m_owner.GetTransform().x = m_target_pos.x - (m_target_size.x / 2.f) - (m_size.x / 2.f);
+				m_owner->GetTransform().x = m_target_pos.x - (m_target_size.x / 2.f) - (m_size.x / 2.f);
 			}
 		}
 		else
 		{
 			if (distY > 0)
 			{
-				m_owner.GetTransform().y = m_target_pos.y + (m_target_size.y / 2.f) + (m_size.y / 2.f);
+				m_owner->GetTransform().y = m_target_pos.y + (m_target_size.y / 2.f) + (m_size.y / 2.f);
 			}
 			else
 			{
-				m_owner.GetTransform().y = m_target_pos.y - (m_target_size.y / 2.f) - (m_size.y / 2.f);
+				m_owner->GetTransform().y = m_target_pos.y - (m_target_size.y / 2.f) - (m_size.y / 2.f);
 			}
 		}
 	}

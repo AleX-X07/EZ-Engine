@@ -1,7 +1,7 @@
 #include "mainloop.h"
 
-MainLoop::MainLoop(const std::string& name) 
-	: m_window(sf::VideoMode({ 1280,720 }), name), m_game(nullptr)
+MainLoop::MainLoop(sf::RenderWindow& window, ez::Game& game)
+	: m_window(window), m_game(game)
 {
 }
 
@@ -27,22 +27,17 @@ void MainLoop::UpdateTime()
 
 void MainLoop::Update()
 {
-	m_game->Update(dt, m_systeme);	
+	m_game.Update(dt, m_systeme);	
 }
 
 void MainLoop::Render()
 {
-	m_game->Render(m_window);	
+	m_game.Render(m_window);	
 }
 
-void MainLoop::SetGame(ez::Game& newgame)
+void MainLoop::Loop()
 {
-	m_game = &newgame;
-}
-
-void MainLoop::Run()
-{
-	m_game->Init();
+	m_game.Init();
 	while (run)
 	{
 		UpdateEvent();
@@ -52,13 +47,4 @@ void MainLoop::Run()
 		Render();
 		m_window.display();
 	}
-}
-
-MainLoop* MainLoop::Instance(const std::string& name)
-{
-	if (m_instance == nullptr)
-	{
-		m_instance = new MainLoop(name);
-	}
-	return m_instance;
 }

@@ -17,7 +17,7 @@ namespace ez::components::graphics
 		int m_order = 0;
 
 	public:
-		Renderer(ez::GameObject& owner);
+		Renderer(ez::GameObject* owner);
 		virtual ~Renderer() = default;
 
 		void SetTexture(const std::string& path);

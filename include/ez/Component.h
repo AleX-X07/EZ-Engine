@@ -10,10 +10,10 @@ namespace ez
 	class Component
 	{
 	protected:
-		GameObject& m_owner;
+		GameObject* m_owner = nullptr;
 
 	public:
-		Component(GameObject& owner);
+		Component(GameObject* owner);
 		virtual ~Component() = default;
 		
 		virtual void Update(float dt, systeme::Systeme& m_systeme);

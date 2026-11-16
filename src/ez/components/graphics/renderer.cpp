@@ -2,10 +2,10 @@
 
 #include <ez/GameObject.h>
 
-ez::components::graphics::Renderer::Renderer(GameObject& owner) : Component(owner), m_texture(nullptr), m_color({ 255,255,255,255 })
+ez::components::graphics::Renderer::Renderer(GameObject* owner) : Component(owner), m_texture(nullptr), m_color({ 255,255,255,255 })
 {
-	auto pos = m_owner.GetTransform();
-	auto size = m_owner.GetSize();
+	auto pos = m_owner->GetTransform();
+	auto size = m_owner->GetSize();
 
 	m_rect.setSize(size);
 	m_rect.setOrigin(size / 2.0f);
@@ -65,8 +65,8 @@ const int& ez::components::graphics::Renderer::GetOrder() const
 
 void ez::components::graphics::Renderer::Update(float dt, systeme::Systeme& m_systeme)
 {
-	auto pos = m_owner.GetTransform();
-	auto size = m_owner.GetSize();
+	auto pos = m_owner->GetTransform();
+	auto size = m_owner->GetSize();
 	m_rect.setPosition(pos);
 	m_rect.setSize(size);
 }

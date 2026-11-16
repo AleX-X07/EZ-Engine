@@ -21,7 +21,7 @@ namespace ez::components::physics
 		bool isStatic = false;
 
 	public:
-		BoxCollider(GameObject& owner);
+		BoxCollider(GameObject* owner);
 		~BoxCollider() = default;
 
 		void SetListObject(std::vector<GameObject*>& listobj);

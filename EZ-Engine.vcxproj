@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="mainloop.cpp" />
     <ClCompile Include="src\ez\Component.cpp" />
     <ClCompile Include="src\ez\components\graphics\camera.cpp" />
     <ClCompile Include="src\ez\components\graphics\renderer.cpp" />
@@ -27,6 +26,7 @@
     <ClCompile Include="src\ez\Game.cpp" />
     <ClCompile Include="src\ez\GameObject.cpp" />
     <ClCompile Include="src\ez\GameScene.cpp" />
+    <ClCompile Include="src\mainloop.cpp" />
     <ClCompile Include="src\systeme\Input.cpp" />
     <ClCompile Include="src\systeme\Systeme.cpp" />
   </ItemGroup>
@@ -38,9 +38,9 @@
     <ClInclude Include="include\ez\Game.h" />
     <ClInclude Include="include\ez\GameObject.h" />
     <ClInclude Include="include\ez\GameScene.h" />
+    <ClInclude Include="include\mainloop.h" />
     <ClInclude Include="include\systeme\Input.h" />
     <ClInclude Include="include\systeme\Systeme.h" />
-    <ClInclude Include="mainloop.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
@@ -137,7 +137,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)external/include;$(ProjectDir)include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)external/include;$(ProjectDir)include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -156,7 +156,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)external/include;$(ProjectDir)include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)external/include;$(ProjectDir)include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
