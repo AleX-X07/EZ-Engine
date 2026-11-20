@@ -43,6 +43,9 @@
     <Filter Include="Fichiers sources\ez\components\physics">
       <UniqueIdentifier>{3e4aa8cf-51ed-4d8a-b127-1351949b0f0e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\maths">
+      <UniqueIdentifier>{bc4e93e6-626e-4752-bea9-1334e2ebe738}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ez\Game.h">
@@ -74,6 +77,12 @@
     </ClInclude>
     <ClInclude Include="include\mainloop.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="include\maths\vecteur.h">
+      <Filter>Fichiers d%27en-tête\maths</Filter>
+    </ClInclude>
+    <ClInclude Include="include\maths\vecteur2d.h">
+      <Filter>Fichiers d%27en-tête\maths</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

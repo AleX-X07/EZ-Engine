@@ -6,13 +6,6 @@
 
 ez::GameScene::GameScene(const std::string& name) : m_name(name)
 {
-	for (auto* obj : m_objects)
-	{
-		if (auto* comp = obj->GetComponent<ez::components::graphics::Renderer>())
-		{
-			m_render[comp->GetOrder()].push_back(obj);
-		}
-	}	
 }
 
 ez::GameScene::~GameScene()
@@ -45,6 +38,17 @@ void ez::GameScene::Update(float dt, systeme::Systeme& m_systeme)
 
 void ez::GameScene::Render(sf::RenderWindow& m_window)
 {
+	if (!sort)
+	{
+		for (auto* obj : m_objects)
+		{
+			if (auto* comp = obj->GetComponent<ez::components::graphics::Renderer>())
+			{
+				m_render[comp->GetOrder()].push_back(obj);
+			}
+		}
+		sort = true;
+	}
 	for (auto& [order, comps] : m_render)
 	{
 		for (auto* comp : comps)

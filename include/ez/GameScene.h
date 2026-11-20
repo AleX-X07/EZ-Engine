@@ -14,6 +14,7 @@ namespace ez
 
 		std::vector<GameObject*> m_objects;
 
+		bool sort = false;
 		std::map<int, std::vector<GameObject*>> m_render;
 
 	public:
