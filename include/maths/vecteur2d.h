@@ -12,7 +12,9 @@ namespace maths
 		T& y;
 
 	public:
-		TVecteur2() : TVecteur<T, 2>(), x(this->m_vec[0]), y(this->m_vec[1]) {}
+		TVecteur2();
 		TVecteur2(const T& x, const T& y) : TVecteur2() {}
 	};
 }
+
+#include <maths/vecteur2d.inl>

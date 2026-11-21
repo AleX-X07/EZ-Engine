@@ -41,8 +41,17 @@
     <ClInclude Include="include\mainloop.h" />
     <ClInclude Include="include\maths\vecteur.h" />
     <ClInclude Include="include\maths\vecteur2d.h" />
+    <ClInclude Include="include\maths\vecteur3d.h" />
     <ClInclude Include="include\systeme\Input.h" />
     <ClInclude Include="include\systeme\Systeme.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="EZ-Engine.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\maths\vecteur.inl" />
+    <None Include="include\maths\vecteur2d.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
