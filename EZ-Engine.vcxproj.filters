@@ -46,6 +46,9 @@
     <Filter Include="Fichiers d%27en-tête\maths">
       <UniqueIdentifier>{bc4e93e6-626e-4752-bea9-1334e2ebe738}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\maths\vecteur">
+      <UniqueIdentifier>{2d2afc1f-3948-478a-b10d-bba28b133c18}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ez\Game.h">
@@ -78,17 +81,17 @@
     <ClInclude Include="include\mainloop.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="include\maths\vecteur.h">
-      <Filter>Fichiers d%27en-tête\maths</Filter>
-    </ClInclude>
-    <ClInclude Include="include\maths\vecteur2d.h">
-      <Filter>Fichiers d%27en-tête\maths</Filter>
-    </ClInclude>
-    <ClInclude Include="include\maths\vecteur3d.h">
-      <Filter>Fichiers d%27en-tête\maths</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="include\maths\vecteur\vecteur.h">
+      <Filter>Fichiers d%27en-tête\maths\vecteur</Filter>
+    </ClInclude>
+    <ClInclude Include="include\maths\vecteur\vecteur2d.h">
+      <Filter>Fichiers d%27en-tête\maths\vecteur</Filter>
+    </ClInclude>
+    <ClInclude Include="include\maths\vecteur\vecteur3d.h">
+      <Filter>Fichiers d%27en-tête\maths\vecteur</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -129,11 +132,14 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="include\maths\vecteur.inl">
-      <Filter>Fichiers d%27en-tête\maths</Filter>
+    <None Include="include\maths\vecteur\vecteur.inl">
+      <Filter>Fichiers d%27en-tête\maths\vecteur</Filter>
     </None>
-    <None Include="include\maths\vecteur2d.inl">
-      <Filter>Fichiers d%27en-tête\maths</Filter>
+    <None Include="include\maths\vecteur\vecteur2d.inl">
+      <Filter>Fichiers d%27en-tête\maths\vecteur</Filter>
+    </None>
+    <None Include="include\maths\vecteur\vecteur3d.inl">
+      <Filter>Fichiers d%27en-tête\maths\vecteur</Filter>
     </None>
   </ItemGroup>
 </Project>

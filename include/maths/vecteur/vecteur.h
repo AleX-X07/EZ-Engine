@@ -24,6 +24,8 @@ namespace maths
 		T& operator[](size_t index);
 		TVecteur<T, n> operator+(TVecteur<T, n>& other);
 		TVecteur<T, n> operator-(TVecteur<T, n>& other);
+		TVecteur<T, n>& operator*(T other);
+		TVecteur<T, n>& operator/(T other);
 
 		friend std::ostream& operator<<(std::ostream& os, const TVecteur<T,n>& vec)
 		{
@@ -42,10 +44,10 @@ namespace maths
 		}
 
 		// Function
-		T& Norm();
+		T Norm();
 		TVecteur<T, n> Normalize();
-		T& DotProduct(TVecteur<T, n>& other);
+		T DotProduct(TVecteur<T, n>& other);
 	};
 }
 
-#include <maths/vecteur.inl>
+#include <maths/vecteur/vecteur.inl>

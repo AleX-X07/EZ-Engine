@@ -39,9 +39,9 @@
     <ClInclude Include="include\ez\GameObject.h" />
     <ClInclude Include="include\ez\GameScene.h" />
     <ClInclude Include="include\mainloop.h" />
-    <ClInclude Include="include\maths\vecteur.h" />
-    <ClInclude Include="include\maths\vecteur2d.h" />
-    <ClInclude Include="include\maths\vecteur3d.h" />
+    <ClInclude Include="include\maths\vecteur\vecteur.h" />
+    <ClInclude Include="include\maths\vecteur\vecteur2d.h" />
+    <ClInclude Include="include\maths\vecteur\vecteur3d.h" />
     <ClInclude Include="include\systeme\Input.h" />
     <ClInclude Include="include\systeme\Systeme.h" />
     <ClInclude Include="resource.h" />
@@ -50,8 +50,9 @@
     <ResourceCompile Include="EZ-Engine.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="include\maths\vecteur.inl" />
-    <None Include="include\maths\vecteur2d.inl" />
+    <None Include="include\maths\vecteur\vecteur.inl" />
+    <None Include="include\maths\vecteur\vecteur2d.inl" />
+    <None Include="include\maths\vecteur\vecteur3d.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>

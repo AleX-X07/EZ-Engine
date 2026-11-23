@@ -81,10 +81,20 @@ namespace maths
 		}
 		return res;
 	}
+
+	template<typename T, int n>
+	TVecteur<T, n>& TVecteur<T, n>::operator*(T other)
+	{
+		for (size_t i = 0; i < n; i++)
+		{
+			m_vec[i] *= other;
+		}
+		return *this;
+	}
 	
 	// Function
 	template<typename T, int n>
-	T& TVecteur<T, n>::Norm()
+	T TVecteur<T, n>::Norm()
 	{
 		T val = T();
 		for (size_t i = 0; i < n; i++)
@@ -108,7 +118,7 @@ namespace maths
 	}
 
 	template<typename T, int n>
-	T& TVecteur<T, n>::DotProduct(TVecteur<T, n>& other)
+	T TVecteur<T, n>::DotProduct(TVecteur<T, n>& other)
 	{
 		T res = T();
 		for (size_t i = 0; i < n; i++)
