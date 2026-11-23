@@ -1,11 +1,15 @@
 #pragma once
 
 #include <cmath>
+#include <type_traits>
 #include <initializer_list>
 
 namespace maths
 {
-	template<typename T, int n>
+	template<typename T>
+	concept NumberT = std::is_integral_v<T> || std::is_floating_point_v<T>;
+
+	template<NumberT T, int n>
 	class TVecteur
 	{
 	protected:
@@ -20,12 +24,12 @@ namespace maths
 		virtual ~TVecteur();
 
 		// Operator
-		TVecteur<T, n>& operator=(TVecteur<T, n>& other);
-		T& operator[](size_t index);
-		TVecteur<T, n> operator+(TVecteur<T, n>& other);
-		TVecteur<T, n> operator-(TVecteur<T, n>& other);
-		TVecteur<T, n>& operator*(T other);
-		TVecteur<T, n>& operator/(T other);
+		TVecteur<T, n>& operator=(const TVecteur<T, n>& other);
+		T& operator[](const size_t& index);
+		TVecteur<T, n> operator+(const TVecteur<T, n>& other);
+		TVecteur<T, n> operator-(const TVecteur<T, n>& other);
+		TVecteur<T, n>& operator*(const T& other);
+		TVecteur<T, n>& operator/(const T& other);
 
 		friend std::ostream& operator<<(std::ostream& os, const TVecteur<T,n>& vec)
 		{
@@ -44,9 +48,9 @@ namespace maths
 		}
 
 		// Function
-		T Norm();
+		float Norm();
 		TVecteur<T, n> Normalize();
-		T DotProduct(TVecteur<T, n>& other);
+		float DotProduct(TVecteur<T, n>& other);
 	};
 }
 

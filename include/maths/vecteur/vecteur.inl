@@ -3,13 +3,13 @@
 namespace maths
 {
 	// Constructor - Destructor
-	template<typename T, int n>
+	template<NumberT T, int n>
 	TVecteur<T,n>::TVecteur()
 	{
 		m_vec = new T[n];
 	};
 
-	template<typename T, int n>
+	template<NumberT T, int n>
 	TVecteur<T,n>::TVecteur(const TVecteur<T,n>& other) : TVecteur()
 	{
 		for (size_t i = 0; i < n; i++)
@@ -18,7 +18,7 @@ namespace maths
 		}
 	}
 
-	template<typename T, int n>
+	template<NumberT T, int n>
 	TVecteur<T, n>::TVecteur(const std::initializer_list<T>& l) : TVecteur<T, n>()
 	{
 		int cptr = 0;
@@ -29,7 +29,7 @@ namespace maths
 		}
 	}
 
-	template<typename T, int n>
+	template<NumberT T, int n>
 	TVecteur<T,n>::~TVecteur()
 	{
 		delete[] m_vec;
@@ -37,8 +37,8 @@ namespace maths
 	}
 
 	// Operator
-	template<typename T, int n>
-	TVecteur<T, n>&  TVecteur<T,n>::operator=(TVecteur<T, n>& other)
+	template<NumberT T, int n>
+	TVecteur<T, n>&  TVecteur<T,n>::operator=(const TVecteur<T, n>& other)
 	{
 		if (this == &other)
 		{
@@ -54,14 +54,14 @@ namespace maths
 		return *this;
 	}
 
-	template<typename T, int n>
-	T& TVecteur<T, n>::operator[](size_t index)
+	template<NumberT T, int n>
+	T& TVecteur<T, n>::operator[](const size_t& index)
 	{
 		return m_vec[index];
 	}
 
-	template<typename T, int n>
-	TVecteur<T, n> TVecteur<T, n>::operator+(TVecteur<T, n>& other)
+	template<NumberT T, int n>
+	TVecteur<T, n> TVecteur<T, n>::operator+(const TVecteur<T, n>& other)
 	{
 		TVecteur<T, n> res;
 		for (size_t i = 0; i < n; i++)
@@ -71,8 +71,8 @@ namespace maths
 		return res;
 	}
 
-	template<typename T, int n>
-	TVecteur<T, n> TVecteur<T, n>::operator-(TVecteur<T, n>& other)
+	template<NumberT T, int n>
+	TVecteur<T, n> TVecteur<T, n>::operator-(const TVecteur<T, n>& other)
 	{
 		TVecteur<T, n> res;
 		for (size_t i = 0; i < n; i++)
@@ -82,8 +82,8 @@ namespace maths
 		return res;
 	}
 
-	template<typename T, int n>
-	TVecteur<T, n>& TVecteur<T, n>::operator*(T other)
+	template<NumberT T, int n>
+	TVecteur<T, n>& TVecteur<T, n>::operator*(const T& other)
 	{
 		for (size_t i = 0; i < n; i++)
 		{
@@ -93,8 +93,8 @@ namespace maths
 	}
 	
 	// Function
-	template<typename T, int n>
-	T TVecteur<T, n>::Norm()
+	template<NumberT T, int n>
+	float TVecteur<T, n>::Norm()
 	{
 		T val = T();
 		for (size_t i = 0; i < n; i++)
@@ -105,7 +105,7 @@ namespace maths
 		return res;
 	}
 
-	template<typename T, int n>
+	template<NumberT T, int n>
 	TVecteur<T, n> TVecteur<T, n>::Normalize()
 	{
 		TVecteur<T, n> res;
@@ -117,8 +117,8 @@ namespace maths
 		return res;
 	}
 
-	template<typename T, int n>
-	T TVecteur<T, n>::DotProduct(TVecteur<T, n>& other)
+	template<NumberT T, int n>
+	float TVecteur<T, n>::DotProduct(TVecteur<T, n>& other)
 	{
 		T res = T();
 		for (size_t i = 0; i < n; i++)

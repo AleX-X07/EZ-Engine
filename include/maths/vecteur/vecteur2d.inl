@@ -15,7 +15,7 @@ namespace maths
 
 	// Function
 	template<typename T>
-	T TVecteur2<T>::CrossProduct(const TVecteur2<T>& other)
+	T TVecteur2<T>::CrossProduct(const TVecteur2<T>& other) 
 	{
 		T res = T();
 		res = x * other.y - y * other.x;

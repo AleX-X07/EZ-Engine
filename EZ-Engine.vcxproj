@@ -39,6 +39,7 @@
     <ClInclude Include="include\ez\GameObject.h" />
     <ClInclude Include="include\ez\GameScene.h" />
     <ClInclude Include="include\mainloop.h" />
+    <ClInclude Include="include\maths\matrix\matrix.h" />
     <ClInclude Include="include\maths\vecteur\vecteur.h" />
     <ClInclude Include="include\maths\vecteur\vecteur2d.h" />
     <ClInclude Include="include\maths\vecteur\vecteur3d.h" />
@@ -47,6 +48,7 @@
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="include\maths\matrix\matrix.inl" />
     <None Include="include\maths\vecteur\vecteur.inl" />
     <None Include="include\maths\vecteur\vecteur2d.inl" />
     <None Include="include\maths\vecteur\vecteur3d.inl" />

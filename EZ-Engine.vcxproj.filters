@@ -49,6 +49,9 @@
     <Filter Include="Fichiers d%27en-tête\maths\vecteur">
       <UniqueIdentifier>{2d2afc1f-3948-478a-b10d-bba28b133c18}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\maths\matrix">
+      <UniqueIdentifier>{1e5f5ee6-1b93-4a2b-a216-ce55403257d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ez\Game.h">
@@ -93,6 +96,9 @@
     <ClInclude Include="include\maths\vecteur\vecteur3d.h">
       <Filter>Fichiers d%27en-tête\maths\vecteur</Filter>
     </ClInclude>
+    <ClInclude Include="include\maths\matrix\matrix.h">
+      <Filter>Fichiers d%27en-tête\maths\matrix</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ez\Game.cpp">
@@ -135,6 +141,9 @@
     </None>
     <None Include="include\maths\vecteur\vecteur3d.inl">
       <Filter>Fichiers d%27en-tête\maths\vecteur</Filter>
+    </None>
+    <None Include="include\maths\matrix\matrix.inl">
+      <Filter>Fichiers d%27en-tête\maths\matrix</Filter>
     </None>
   </ItemGroup>
 </Project>
