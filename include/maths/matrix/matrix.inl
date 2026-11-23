@@ -6,7 +6,31 @@ namespace maths
 	template<NumberT T, int line, int column>
 	TMatrix<T, line, column>::TMatrix()
 	{
-		m_vec = new[line * column];
+		m_vec = new T[size];
+	}
+
+	template<NumberT T, int line, int column>
+	TMatrix<T, line, column>::TMatrix(const TMatrix<T, line, column>& other)
+	{
+		m_vec = new T[size];
+		for (size_t i = 0; i < size; i++)
+		{
+			m_vec[i] = other.m_vec[i];
+		}
+	}
+
+	template<NumberT T, int line, int column>
+	TMatrix<T, line, column>::TMatrix(const std::initializer_list<std::initializer_list<T>>& l) : TMatrix<T,line,column>()
+	{
+		size_t i = 0;
+		for (auto& val : l)
+		{
+			for (auto& v : val)
+			{
+				m_vec[i] = v;
+				i++;
+			}
+		}
 	}
 
 	// Operator
@@ -19,7 +43,7 @@ namespace maths
 		}
 
 		delete[] m_vec;
-		m_vec = new[size];
+		m_vec = new T[size];
 
 		for (size_t i = 0; i < size; i++)
 		{
@@ -29,7 +53,7 @@ namespace maths
 	}
 
 	template<NumberT T, int line, int column>
-	size_t TMatrix<T,line,column>::operator[](const size_t& index)
+	T& TMatrix<T,line,column>::operator[](const size_t& index)
 	{
 		return m_vec[index];
 	}
@@ -60,15 +84,21 @@ namespace maths
 	template<int LOther, int COther>
 	TMatrix<T, line, COther> TMatrix<T, line, column>::operator*(const TMatrix<T, LOther, COther>& other)
 	{
-		if (column != COther)
+		TMatrix<T, line, COther> res = TMatrix<T, line, column>();
+		if (column == COther)
 		{
-			return;
-		}
-
-		TMatrix<T, line, column> res = TMatrix<T, line, column>();
-		for (size_t i = 0; i < size; i++)
-		{
-			res[i] = 
+			for (size_t l = 0; l < line; l++)
+			{
+				for (size_t c = 0; c < COther; c++)
+				{
+					T val = T();
+					for (size_t i = 0; i < column; i++)
+					{
+						val += m_vec[i + line * l] * other.m_vec[c + LOther * i];
+					}
+					res[c + COther * l] = val;
+				}
+			}
 		}
 		return res;
 	}
@@ -84,7 +114,7 @@ namespace maths
 	}
 
 	template<NumberT T, int line, int column>
-	TMatrix<T, line, column> TMatrix<T, line, column>::operator*(const T& other)
+	TMatrix<T, line, column> TMatrix<T, line, column>::operator/(const T& other)
 	{
 		for (size_t i = 0; i < size; i++)
 		{
