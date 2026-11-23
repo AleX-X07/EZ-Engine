@@ -47,9 +47,6 @@
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="EZ-Engine.rc" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="include\maths\vecteur\vecteur.inl" />
     <None Include="include\maths\vecteur\vecteur2d.inl" />
     <None Include="include\maths\vecteur\vecteur3d.inl" />

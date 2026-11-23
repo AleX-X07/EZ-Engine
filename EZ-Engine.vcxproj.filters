@@ -127,11 +127,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="EZ-Engine.rc">
-      <Filter>Fichiers de ressources</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="include\maths\vecteur\vecteur.inl">
       <Filter>Fichiers d%27en-tête\maths\vecteur</Filter>
     </None>
