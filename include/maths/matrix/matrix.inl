@@ -4,6 +4,15 @@ namespace maths
 {
 	// Constructor - Destructor
 	template<NumberT T, int line, int column>
+	TMatrix<T, line, column>::TMatrix()
+	{
+		for (size_t i = 0; i < m_size; i++)
+		{
+			m_vec[i] = 0;
+		}
+	}
+
+	template<NumberT T, int line, int column>
 	TMatrix<T, line, column>::TMatrix(const TMatrix<T, line, column>& other)
 	{
 		for (size_t i = 0; i < m_size; i++)
