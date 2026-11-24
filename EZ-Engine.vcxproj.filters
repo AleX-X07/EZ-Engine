@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Fichiers sources">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Fichiers d%27en-tête">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
@@ -16,32 +12,17 @@
     <Filter Include="Fichiers d%27en-tête\ez">
       <UniqueIdentifier>{3d3d7bcf-e824-4897-b7cc-13267135af0a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\ez">
-      <UniqueIdentifier>{1e402e0e-4808-4096-8f0a-74d59108b1d1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers d%27en-tête\systeme">
       <UniqueIdentifier>{bfbd1e0f-83ed-4355-9dd9-641ed1f1c593}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\systeme">
-      <UniqueIdentifier>{b0d3ec8f-eab5-4229-8a65-ffe047e2f5d4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Fichiers d%27en-tête\ez\components">
       <UniqueIdentifier>{a9eed842-4bdf-4043-829d-a3baa9e40a4d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\ez\components">
-      <UniqueIdentifier>{07cfdded-771b-4c43-935b-3d5f007ebe1a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers d%27en-tête\ez\components\graphics">
       <UniqueIdentifier>{05a99fc5-a0c4-4e97-a9f3-9dbb17e4aece}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\ez\components\graphics">
-      <UniqueIdentifier>{d1365801-3d20-4437-b10c-da5b9e7fc7dd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers d%27en-tête\ez\components\physics">
       <UniqueIdentifier>{d5e59d0a-d6bb-4445-8e19-b7c0e33500ab}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\ez\components\physics">
-      <UniqueIdentifier>{3e4aa8cf-51ed-4d8a-b127-1351949b0f0e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Fichiers d%27en-tête\maths">
       <UniqueIdentifier>{bc4e93e6-626e-4752-bea9-1334e2ebe738}</UniqueIdentifier>
@@ -51,6 +32,25 @@
     </Filter>
     <Filter Include="Fichiers d%27en-tête\maths\matrix">
       <UniqueIdentifier>{1e5f5ee6-1b93-4a2b-a216-ce55403257d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers sources\ez">
+      <UniqueIdentifier>{1e402e0e-4808-4096-8f0a-74d59108b1d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\ez\components">
+      <UniqueIdentifier>{07cfdded-771b-4c43-935b-3d5f007ebe1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\ez\components\graphics">
+      <UniqueIdentifier>{d1365801-3d20-4437-b10c-da5b9e7fc7dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\ez\components\physics">
+      <UniqueIdentifier>{3e4aa8cf-51ed-4d8a-b127-1351949b0f0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\systeme">
+      <UniqueIdentifier>{b0d3ec8f-eab5-4229-8a65-ffe047e2f5d4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

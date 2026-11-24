@@ -13,11 +13,11 @@ namespace maths
 	class TVecteur
 	{
 	protected:
-		T* m_vec = nullptr;
+		T m_vec[n];
 
 	public:
 		// Constructor - Destructeur
-		TVecteur();
+		TVecteur() = default;
 		TVecteur(const TVecteur<T, n>& other);
 		TVecteur(const std::initializer_list<T>& l);
 
@@ -31,7 +31,12 @@ namespace maths
 		TVecteur<T, n>& operator*(const T& other);
 		TVecteur<T, n>& operator/(const T& other);
 
-		friend std::ostream& operator<<(std::ostream& os, const TVecteur<T,n>& vec)
+		// Function
+		float Norm();
+		TVecteur<T, n> Normalize();
+		float DotProduct(TVecteur<T, n>& other);
+
+		friend std::ostream& operator<<(std::ostream& os, const TVecteur<T, n>& vec)
 		{
 			os << "(";
 			for (size_t i = 0; i < n; i++)
@@ -46,11 +51,6 @@ namespace maths
 			os << ")";
 			return os;
 		}
-
-		// Function
-		float Norm();
-		TVecteur<T, n> Normalize();
-		float DotProduct(TVecteur<T, n>& other);
 	};
 }
 

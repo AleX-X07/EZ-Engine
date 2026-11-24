@@ -4,13 +4,7 @@ namespace maths
 {
 	// Constructor - Destructor
 	template<NumberT T, int n>
-	TVecteur<T,n>::TVecteur()
-	{
-		m_vec = new T[n];
-	};
-
-	template<NumberT T, int n>
-	TVecteur<T,n>::TVecteur(const TVecteur<T,n>& other) : TVecteur()
+	TVecteur<T,n>::TVecteur(const TVecteur<T,n>& other) 
 	{
 		for (size_t i = 0; i < n; i++)
 		{
@@ -19,7 +13,7 @@ namespace maths
 	}
 
 	template<NumberT T, int n>
-	TVecteur<T, n>::TVecteur(const std::initializer_list<T>& l) : TVecteur<T, n>()
+	TVecteur<T, n>::TVecteur(const std::initializer_list<T>& l)
 	{
 		int cptr = 0;
 		for (auto& Elem : l)
@@ -32,8 +26,6 @@ namespace maths
 	template<NumberT T, int n>
 	TVecteur<T,n>::~TVecteur()
 	{
-		delete[] m_vec;
-		m_vec = nullptr;
 	}
 
 	// Operator
@@ -45,8 +37,6 @@ namespace maths
 			return *this;
 		}
 
-		delete[] m_vec;
-		m_vec = new T[n];
 		for (size_t i = 0; i < n; i++)
 		{
 			m_vec[i] = other.m_vec[i];
