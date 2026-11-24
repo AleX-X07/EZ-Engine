@@ -125,12 +125,45 @@ namespace maths
 	T TMatrix<T, line, column>::Det()
 	{
 		static_assert(line == column);
-		T res = T();
-		if (line == 2 && column == 2)
+		T res = 0;
+		if constexpr (line == 1 && column == 1)
 		{
-			res += m_vec[0] * m_vec[3] - m_vec[1] * m_vec[2];
+			return res += m_vec[0];
 		}
-		return res;
+		else if constexpr (line == 2 && column == 2)
+		{
+			return res += m_vec[0] * m_vec[3] - m_vec[1] * m_vec[2];
+		}
+		else
+		{
+			for (size_t i = 0; i < column; i++)
+			{
+				int val = 0;
+				if (i % 2 == 0)
+				{
+					val = 1;
+				}
+				else
+				{
+					val = -1;
+				}
+				TMatrix<T, line - 1, column - 1> mat;
+				int k = 0;
+				for (size_t l = 1; l < line; l++)
+				{
+					for (size_t c = 0; c < column; c++)
+					{
+						if (c == i)
+						{
+							continue;
+						}
+						mat[k++] = m_vec[c + column * l];
+					}
+				}
+				res += (val * m_vec[i] * mat.Det());
+			}
+			return res;
+		}
 	}
 
 	template<NumberT T, int line, int column>
