@@ -47,6 +47,7 @@ namespace ez
 					return _cast;
 				}
 			}
+			return nullptr;
 		};
 
 		template<typename T> bool HasComponent()

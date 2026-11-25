@@ -2,6 +2,7 @@
 
 #include <type_traits>
 #include <initializer_list>
+#include <cmath>
 
 namespace maths
 {
@@ -18,9 +19,9 @@ namespace maths
 
 	private:
 		// Function
-		void SwapLine(TMatrix<T, line, column>& mat1, size_t k, size_t k2);
-		void MultiplyingLineByScalar(TMatrix<T, line, column>& mat1, size_t k, size_t lambda);
-		void LinearCombination(TMatrix<T, line, column>& mat1, size_t k, size_t k2, size_t lambda);
+		void SwapLine(size_t k, size_t k2);
+		void MultiplyingLineByScalar(size_t k, T lambda);
+		void LinearCombination(size_t k, size_t k2, T lambda);
 
 	public:
 
@@ -33,8 +34,10 @@ namespace maths
 		// Operator
 		TMatrix<T, line, column>& operator=(const TMatrix<T, line, column>& other);
 		T& operator[](size_t index);
+
 		TMatrix<T, line, column> operator+(const TMatrix<T, line, column>& other);
 		TMatrix<T, line, column>& operator+=(const TMatrix<T, line, column>& other);
+
 		TMatrix<T, line, column> operator-(const TMatrix<T, line, column>& other);
 		TMatrix<T, line, column>& operator-=(const TMatrix<T, line, column>& other);
 
@@ -44,6 +47,7 @@ namespace maths
 
 		TMatrix<T, line, column> operator*(const T& other);	
 		TMatrix<T, line, column>& operator*=(const T& other);
+
 		TMatrix<T, line, column> operator/(const T& other);
 		TMatrix<T, line, column> operator/=(const T& other);
 
@@ -52,7 +56,7 @@ namespace maths
 
 		// Function
 		T Det();
-		TMatrix<T, line, column> Inverse() const;
+		TMatrix<T, line, column> Inverse();
 		static TMatrix<T, line, column> Identity();
 		TMatrix<T, column, line> Transpose() const;
 

@@ -56,9 +56,19 @@ namespace maths
 		TVecteur<T, n> res;
 		for (size_t i = 0; i < n; i++)
 		{
-			res[i] = m_vec[i] + other[i];
+			res[i] = m_vec[i] + other.m_vec[i];
 		}
 		return res;
+	}
+
+	template<NumberT T, int n>
+	TVecteur<T, n>& TVecteur<T, n>::operator+=(const TVecteur<T, n>& other)
+	{
+		for (size_t i = 0; i < n; i++)
+		{
+			m_vec[i] += other.m_vec[i];
+		}
+		return *this;
 	}
 
 	template<NumberT T, int n>
@@ -67,19 +77,89 @@ namespace maths
 		TVecteur<T, n> res;
 		for (size_t i = 0; i < n; i++)
 		{
-			res[i] = m_vec[i] - other[i];
+			res[i] = m_vec[i] - other.m_vec[i];
 		}
 		return res;
 	}
 
 	template<NumberT T, int n>
-	TVecteur<T, n>& TVecteur<T, n>::operator*(const T& other)
+	TVecteur<T, n>& TVecteur<T, n>::operator-=(const TVecteur<T, n>& other)
+	{
+		for (size_t i = 0; i < n; i++)
+		{
+			m_vec[i] -= other.m_vec[i];
+		}
+		return *this;
+	}
+
+	template<NumberT T, int n>
+	TVecteur<T, n> TVecteur<T, n>::operator*(const T& other)
+	{
+		TVecteur<T, n> res;
+		for (size_t i = 0; i < n; i++)
+		{
+			res[i] = m_vec[i] * other;
+		}
+		return res;
+	}
+
+	template<NumberT T, int n>
+	TVecteur<T, n>& TVecteur<T, n>::operator*=(const T& other)
 	{
 		for (size_t i = 0; i < n; i++)
 		{
 			m_vec[i] *= other;
 		}
 		return *this;
+	}
+
+	template<NumberT T, int n>
+	TVecteur<T, n> TVecteur<T, n>::operator/(const T& other)
+	{
+		TVecteur<T, n> res;
+		for (size_t i = 0; i < n; i++)
+		{
+			res[i] = m_vec[i] / other;
+		}
+		return res;
+	}
+
+	template<NumberT T, int n>
+	TVecteur<T, n>& TVecteur<T, n>::operator/=(const T& other)
+	{
+		for (size_t i = 0; i < n; i++)
+		{
+			m_vec[i] /= other;
+		}
+		return *this;
+	}
+
+	template<NumberT T, int n>
+	bool TVecteur<T, n>::operator==(const TVecteur<T,n>& other)
+	{
+		bool res = true;
+		for (size_t i = 0; i < n; i++)
+		{
+			if (m_vec[i] != other.m_vec[i])
+			{
+				res = false;
+			}
+		}
+		return res;
+	}
+
+	template<NumberT T, int n>
+	bool TVecteur<T, n>::operator!=(const TVecteur<T, n>& other)
+	{
+		bool res = false;
+		for (size_t i = 0; i < n; i++)
+		{
+			if (m_vec[i] != other.m_vec[i])
+			{
+				res = true;
+			}
+		}
+		return res;
 	}
 	
 	// Function

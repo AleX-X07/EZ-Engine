@@ -38,6 +38,7 @@ void MainLoop::Render()
 void MainLoop::Loop()
 {
 	m_game.Init();
+	m_clock.restart();
 	while (run)
 	{
 		UpdateEvent();

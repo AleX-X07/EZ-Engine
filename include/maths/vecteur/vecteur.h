@@ -26,10 +26,21 @@ namespace maths
 		// Operator
 		TVecteur<T, n>& operator=(const TVecteur<T, n>& other);
 		T& operator[](const size_t& index);
+
 		TVecteur<T, n> operator+(const TVecteur<T, n>& other);
+		TVecteur<T, n>& operator+=(const TVecteur<T, n>& other);
+
 		TVecteur<T, n> operator-(const TVecteur<T, n>& other);
-		TVecteur<T, n>& operator*(const T& other);
-		TVecteur<T, n>& operator/(const T& other);
+		TVecteur<T, n>& operator-=(const TVecteur<T, n>& other);
+
+		TVecteur<T, n> operator*(const T& other);
+		TVecteur<T, n>& operator*=(const T& other);
+
+		TVecteur<T, n> operator/(const T& other);
+		TVecteur<T, n>& operator/=(const T& other);
+
+		bool operator==(const TVecteur<T, n>& other);
+		bool operator!=(const TVecteur<T, n>& other);
 
 		// Function
 		float Norm();
