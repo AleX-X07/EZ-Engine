@@ -39,6 +39,7 @@
     <ClInclude Include="include\ez\GameObject.h" />
     <ClInclude Include="include\ez\GameScene.h" />
     <ClInclude Include="include\mainloop.h" />
+    <ClInclude Include="include\maths\globals.h" />
     <ClInclude Include="include\maths\matrix\matrix.h" />
     <ClInclude Include="include\maths\vecteur\vecteur.h" />
     <ClInclude Include="include\maths\vecteur\vecteur2d.h" />

@@ -164,7 +164,18 @@ namespace maths
 	
 	// Function
 	template<NumberT T, int n>
-	float TVecteur<T, n>::Norm()
+	TMatrix<T, n + 1, n + 1> TVecteur<T, n>::VecToMatrix()
+	{
+		TMatrix<T, n + 1, n + 1> res = TMatrix<T, n + 1, n + 1>::Identity();
+		for (size_t i = 0; i < n; i++)
+		{
+			res[n + (n + 1) * i] = m_vec[i];
+		}
+		return res;
+	}
+
+	template<NumberT T, int n>
+	float TVecteur<T, n>::Norm() const 
 	{
 		T val = T();
 		for (size_t i = 0; i < n; i++)
@@ -176,7 +187,7 @@ namespace maths
 	}
 
 	template<NumberT T, int n>
-	TVecteur<T, n> TVecteur<T, n>::Normalize()
+	TVecteur<T, n> TVecteur<T, n>::Normalize() const
 	{
 		TVecteur<T, n> res;
 		T norm = Norm();

@@ -99,6 +99,9 @@
     <ClInclude Include="include\maths\matrix\matrix.h">
       <Filter>Fichiers d%27en-tête\maths\matrix</Filter>
     </ClInclude>
+    <ClInclude Include="include\maths\globals.h">
+      <Filter>Fichiers d%27en-tête\maths</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ez\Game.cpp">

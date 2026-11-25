@@ -58,6 +58,12 @@ namespace maths
 	}
 
 	template<NumberT T, int line, int column>
+	const T& TMatrix<T, line, column>::operator[](size_t index) const
+	{
+		return m_vec[index];
+	}
+
+	template<NumberT T, int line, int column>
 	TMatrix<T, line, column> TMatrix<T, line, column>::operator+(const TMatrix<T, line, column>& other)
 	{
 		TMatrix<T, line, column> res = TMatrix<T, line, column>();
@@ -75,7 +81,7 @@ namespace maths
 		{
 			m_vec[i] += other.m_vec[i];
 		}
-		return this;
+		return *this;
 	}
 
 	template<NumberT T, int line, int column>
@@ -96,7 +102,7 @@ namespace maths
 		{
 			m_vec[i] -= other.m_vec[i];
 		}
-		return this;
+		return *this;
 	}
 
 	template<NumberT T, int line, int column>
@@ -250,6 +256,17 @@ namespace maths
 	}
 
 	template<NumberT T, int line, int column>
+	TVecteur<T, line> TMatrix<T,line,column>::MatrixToVec()
+	{
+		TVecteur<T, line> res;
+		for (size_t i = 0; i < line; i++)
+		{
+			res[i] = m_vec[line + (line + 1) * i];
+		}
+		return res;
+	}
+
+	template<NumberT T, int line, int column>
 	T TMatrix<T, line, column>::Det()
 	{
 		static_assert(line == column);
@@ -365,6 +382,35 @@ namespace maths
 			for (size_t y = 0; y < column; y++)
 			{
 				res[i + line * y] = m_vec[y + column * i];
+			}
+		}
+		return res;
+	}
+
+	template<NumberT T, int line, int column>
+	TMatrix<T, line + 1, column + 1> TMatrix<T, line, column>::UpgradeMatrix()
+	{
+		TMatrix<T, line + 1, column + 1> res = TMatrix<T, line + 1, column + 1>::Identity();
+		for (size_t i = 0; i < line; i++)
+		{
+			for (size_t k = 0; k < column; k++)
+			{
+				res[k + (column + 1) * i] = m_vec[k + column * i];
+			}
+		}
+		return res;
+	}
+
+	template<NumberT T, int line, int column>
+	TMatrix<T, line - 1, column - 1> TMatrix<T, line, column>::DowngradeMatrix()
+	{
+		static_assert(line != 0 && column != 0);
+		TMatrix<T, line - 1, column - 1> res = TMatrix<T, line - 1, column - 1>::Identity();
+		for (size_t i = 0; i < line; i++)
+		{
+			for (size_t k = 0; k < column; k++)
+			{
+				res[k + (column - 1) * i] = m_vec[k + column * i];
 			}
 		}
 		return res;

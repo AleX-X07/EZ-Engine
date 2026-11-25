@@ -3,17 +3,20 @@
 #include <cmath>
 #include <type_traits>
 #include <initializer_list>
+#include <maths/globals.h>
 
 namespace maths
 {
-	template<typename T>
-	concept NumberT = std::is_integral_v<T> || std::is_floating_point_v<T>;
-
 	template<NumberT T, int n>
 	class TVecteur
 	{
 	protected:
 		T m_vec[n];
+
+
+	protected:
+		// Function
+		TMatrix<T, n + 1, n + 1> VecToMatrix();
 
 	public:
 		// Constructor - Destructeur
@@ -43,8 +46,8 @@ namespace maths
 		bool operator!=(const TVecteur<T, n>& other);
 
 		// Function
-		float Norm();
-		TVecteur<T, n> Normalize();
+		float Norm() const;
+		TVecteur<T, n> Normalize() const;
 		float DotProduct(TVecteur<T, n>& other);
 
 		friend std::ostream& operator<<(std::ostream& os, const TVecteur<T, n>& vec)

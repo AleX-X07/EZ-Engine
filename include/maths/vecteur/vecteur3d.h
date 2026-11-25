@@ -4,7 +4,7 @@
 
 namespace maths
 {
-	template<typename T>
+	template<NumberT T>
 	class TVecteur3 : public TVecteur<T, 3>
 	{
 	public:
@@ -19,6 +19,7 @@ namespace maths
 
 		// Function
 		TVecteur3<T> CrossProduct(const TVecteur3<T>& other);
+		TVecteur3<T>& Rotate(float angle, const TVecteur3<T>& axe);
 	};
 }
 

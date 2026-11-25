@@ -3,9 +3,17 @@
 #include <type_traits>
 #include <initializer_list>
 #include <cmath>
+#include <cassert>
 
 namespace maths
 {
+
+	template<typename T>
+	concept NumberT = std::is_integral_v<T> || std::is_floating_point_v<T>;
+	
+	template<NumberT T, int n>
+	class TVecteur;
+
 	template<NumberT T, int line, int column>
 	class TMatrix
 	{
@@ -23,6 +31,8 @@ namespace maths
 		void MultiplyingLineByScalar(size_t k, T lambda);
 		void LinearCombination(size_t k, size_t k2, T lambda);
 
+		TVecteur<T, line> MatrixToVec();
+
 	public:
 
 		// Constructor - Destructor
@@ -34,6 +44,7 @@ namespace maths
 		// Operator
 		TMatrix<T, line, column>& operator=(const TMatrix<T, line, column>& other);
 		T& operator[](size_t index);
+		const T& operator[](size_t index) const;
 
 		TMatrix<T, line, column> operator+(const TMatrix<T, line, column>& other);
 		TMatrix<T, line, column>& operator+=(const TMatrix<T, line, column>& other);
@@ -59,6 +70,8 @@ namespace maths
 		TMatrix<T, line, column> Inverse();
 		static TMatrix<T, line, column> Identity();
 		TMatrix<T, column, line> Transpose() const;
+		TMatrix<T, line + 1, column + 1> UpgradeMatrix();
+		TMatrix<T, line - 1, column - 1> DowngradeMatrix();
 
 		friend std::ostream& operator<<(std::ostream& os, const TMatrix<T, line, column>& vec)
 		{
