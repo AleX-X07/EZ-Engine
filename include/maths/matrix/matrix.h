@@ -16,6 +16,12 @@ namespace maths
 		T m_line = line;
 		T m_column = column;
 
+	private:
+		// Function
+		void SwapLine(TMatrix<T, line, column>& mat1, size_t k, size_t k2);
+		void MultiplyingLineByScalar(TMatrix<T, line, column>& mat1, size_t k, size_t lambda);
+		void LinearCombination(TMatrix<T, line, column>& mat1, size_t k, size_t k2, size_t lambda);
+
 	public:
 
 		// Constructor - Destructor
@@ -28,18 +34,27 @@ namespace maths
 		TMatrix<T, line, column>& operator=(const TMatrix<T, line, column>& other);
 		T& operator[](size_t index);
 		TMatrix<T, line, column> operator+(const TMatrix<T, line, column>& other);
+		TMatrix<T, line, column>& operator+=(const TMatrix<T, line, column>& other);
 		TMatrix<T, line, column> operator-(const TMatrix<T, line, column>& other);
+		TMatrix<T, line, column>& operator-=(const TMatrix<T, line, column>& other);
 
 		template<int LOther, int COther>
 		TMatrix<T, line, COther> operator*(const TMatrix<T, LOther, COther>& other);
+		TMatrix<T, line, column>& operator*=(const TMatrix<T, line, column>& other);
 
-		TMatrix<T, line, column> operator*(const T& other);
+		TMatrix<T, line, column> operator*(const T& other);	
+		TMatrix<T, line, column>& operator*=(const T& other);
 		TMatrix<T, line, column> operator/(const T& other);
+		TMatrix<T, line, column> operator/=(const T& other);
+
+		bool operator==(const TMatrix<T, line, column>& other);
+		bool operator!=(const TMatrix<T, line, column>& other);
 
 		// Function
 		T Det();
-		TMatrix<T, line, column> Inverse();
-		TMatrix<T, line, column> Identity();
+		TMatrix<T, line, column> Inverse() const;
+		static TMatrix<T, line, column> Identity();
+		TMatrix<T, column, line> Transpose() const;
 
 		friend std::ostream& operator<<(std::ostream& os, const TMatrix<T, line, column>& vec)
 		{

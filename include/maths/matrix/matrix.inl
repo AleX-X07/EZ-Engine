@@ -69,6 +69,16 @@ namespace maths
 	}
 
 	template<NumberT T, int line, int column>
+	TMatrix<T, line, column>& TMatrix<T, line, column>::operator+=(const TMatrix<T, line, column>& other)
+	{
+		for (size_t i = 0; i < m_size; i++)
+		{
+			m_vec[i] += other.m_vec[i];
+		}
+		return this;
+	}
+
+	template<NumberT T, int line, int column>
 	TMatrix<T, line, column> TMatrix<T, line, column>::operator-(const TMatrix<T, line, column>& other)
 	{
 		TMatrix<T, line, column> res = TMatrix<T, line, column>();
@@ -77,6 +87,16 @@ namespace maths
 			res[i] = m_vec[i] - other.m_vec[i];
 		}
 		return res;
+	}
+
+	template<NumberT T, int line, int column>
+	TMatrix<T, line, column>& TMatrix<T, line, column>::operator-=(const TMatrix<T, line, column>& other)
+	{
+		for (size_t i = 0; i < m_size; i++)
+		{
+			m_vec[i] -= other.m_vec[i];
+		}
+		return this;
 	}
 
 	template<NumberT T, int line, int column>
@@ -101,7 +121,26 @@ namespace maths
 	}
 
 	template<NumberT T, int line, int column>
+	TMatrix<T, line, column>& TMatrix<T, line, column>::operator*=(const TMatrix<T, line, column>& other)
+	{
+		TMatrix<T, line, column> res = *this * other;
+		*this = res;
+		return *this;
+	}
+
+	template<NumberT T, int line, int column>
 	TMatrix<T, line, column> TMatrix<T, line, column>::operator*(const T& other)
+	{
+		TMatrix<T, line, column> res;
+		for (size_t i = 0; i < m_size; i++)
+		{
+			res[i] = m_vec[i] * other;
+		}
+		return res;
+	}
+
+	template<NumberT T, int line, int column>
+	TMatrix<T, line, column>& TMatrix<T, line, column>::operator*=(const T& other)
 	{
 		for (size_t i = 0; i < m_size; i++)
 		{
@@ -113,6 +152,17 @@ namespace maths
 	template<NumberT T, int line, int column>
 	TMatrix<T, line, column> TMatrix<T, line, column>::operator/(const T& other)
 	{
+		TMatrix<T, line, column> res;
+		for (size_t i = 0; i < m_size; i++)
+		{
+			res[i] = m_vec[i] / other;
+		}
+		return res;
+	}
+
+	template<NumberT T, int line, int column>
+	TMatrix<T, line, column> TMatrix<T, line, column>::operator/=(const T& other)
+	{
 		for (size_t i = 0; i < m_size; i++)
 		{
 			m_vec[i] /= other;
@@ -120,7 +170,86 @@ namespace maths
 		return *this;
 	}
 
+	template<NumberT T, int line, int column>
+	bool TMatrix<T, line, column>::operator==(const TMatrix<T, line, column>& other)
+	{
+		bool res = true;
+		for (size_t i = 0; i < m_size; i++)
+		{
+			if (m_vec[i] != other.m_vec[i])
+			{
+				res = false;
+			}
+		}
+		return res;
+	}
+
+	template<NumberT T, int line, int column>
+	bool TMatrix<T, line, column>::operator!=(const TMatrix<T, line, column>& other)
+	{
+		bool res = false;
+		for (size_t i = 0; i < m_size; i++)
+		{
+			if (m_vec[i] != other.m_vec[i])
+			{
+				res = true;
+			}
+		}
+		return res;
+	}
+
 	// Function
+	template<NumberT T, int line, int column>
+	void TMatrix<T, line, column>::SwapLine(TMatrix<T, line, column>& mat1, size_t k, size_t k2)
+	{
+		assert(k < line);
+		assert(k2 < line);
+
+		for (size_t i = 0; i < column; i++)
+		{
+			size_t index = i + column * k;
+			size_t index2 = i + column * k2;
+			T temp = mat1[index2];
+			T temp2 = mat1[index];
+			mat1[index] = temp;
+			mat1[index2] = temp2;
+		}	
+	}
+
+	template<NumberT T, int line, int column>
+	void TMatrix<T, line, column>::MultiplyingLineByScalar(TMatrix<T, line, column>& mat1, size_t k, size_t lambda)
+	{
+		assert(k < line);
+		if (lambda != 0)
+		{
+			for (size_t i = 0; i < column; i++)
+			{
+				size_t index = i + column * k;
+				mat1[index] *= lambda;
+			}
+		}
+	}
+
+	template<NumberT T, int line, int column>
+	void TMatrix<T, line, column>::LinearCombination(TMatrix<T, line, column>& mat1, size_t k, size_t k2, size_t lambda)
+	{
+		assert(k < line);
+		assert(k2 < line);
+		if (k != k2)
+		{
+			if (lambda != 0)
+			{
+				for (size_t i = 0; i < column; i++)
+				{
+					size_t index = i + column * k;
+					size_t index2 = i + column * k2;
+					mat1[index] += mat1[index2] * lambda;
+				}
+			}
+		}
+
+	}
+
 	template<NumberT T, int line, int column>
 	T TMatrix<T, line, column>::Det()
 	{
@@ -167,14 +296,39 @@ namespace maths
 	}
 
 	template<NumberT T, int line, int column>
-	TMatrix<T, line, column> TMatrix<T, line, column>::Inverse()
+	TMatrix<T, line, column> TMatrix<T, line, column>::Inverse() const
 	{
 		static_assert(line == column);
 		T det = this->Det();
 		if (det != 0)
 		{
+			TMatrix<T, line, column> res = *this;
+			TMatrix<T, line, column> identity = this->Identity();
 
+			T pivot;
+
+			for (size_t k = 0; k < column; k++)
+			{
+				for (size_t i = 0; i < line; i++)
+				{
+					if (i >= k)
+					{
+						if (i != k && i != 0)
+						{
+							SwapLine(res, k, i);
+							SwapLine(identity, k, i);
+						}
+						pivot = res[i];
+						break;
+					}
+				}
+				res[k] /= pivot;
+				identity[k] /= pivot;
+			}
+			return identity;
 		}
+		TMatrix<T, line, column> echec;
+		return echec;
 	}
 
 	template<NumberT T, int line, int column>
@@ -186,6 +340,20 @@ namespace maths
 			for (size_t j = 0; j < line; j++)
 			{
 				res[j + column * j] = 1;
+			}
+		}
+		return res;
+	}
+
+	template<NumberT T, int line, int column>
+	TMatrix<T, column, line> TMatrix<T, line, column>::Transpose() const
+	{
+		TMatrix<T, column, line> res;
+		for (size_t i = 0; i < line; i++)
+		{
+			for (size_t y = 0; y < column; y++)
+			{
+				res[i + line * y] = m_vec[y + column * i];
 			}
 		}
 		return res;
