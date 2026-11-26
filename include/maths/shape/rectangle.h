@@ -14,10 +14,10 @@ namespace maths
 		Rectangle(TVecteur2<float> size = {});
 		~Rectangle() = default;
 
-		void SetPosition(const TVecteur2<float>& pos);
+		void SetPosition(TVecteur2<float>& pos);
 		void SetSize(TVecteur2<float>& size);
 
-		TVecteur2<float>& GetPos();
+		TVecteur2<float>& GetPosition();
 		TVecteur2<float>& GetSize();
 	};
 }

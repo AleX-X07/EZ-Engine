@@ -29,11 +29,11 @@ namespace maths
 	TVecteur3<T>& TVecteur3<T>::Rotate(float angle, const TVecteur3<T>& axe)
 	{
 		float rad = maths::DegreeToRad(angle);
-		auto temp = axe.Normalize();
+		auto axe_normaliser = axe.Normalize();
 
-		float kx = static_cast<float>(temp[0]);
-		float ky = static_cast<float>(temp[1]);
-		float kz = static_cast<float>(temp[2]);
+		float kx = static_cast<float>(axe_normaliser[0]);
+		float ky = static_cast<float>(axe_normaliser[1]);
+		float kz = static_cast<float>(axe_normaliser[2]);
 
 		float c = std::cos(rad);
 		float s = std::sin(rad);

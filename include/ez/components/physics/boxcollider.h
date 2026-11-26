@@ -27,7 +27,7 @@ namespace ez::components::physics
 		virtual ~BoxCollider() = default;
 
 		void SetListObject(std::vector<GameObject*>& listobj);
-		void SetSize(const sf::Vector2f& size);
+		void SetSize(maths::TVecteur2<float>& size);
 
 		//void Debug();
 

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <cmath>
 #include <type_traits>
 #include <initializer_list>
@@ -28,7 +29,8 @@ namespace maths
 
 		// Operator
 		TVecteur<T, n>& operator=(const TVecteur<T, n>& other);
-		T& operator[](const size_t& index);
+		T& operator[](size_t index);
+		T operator[](size_t index) const;
 
 		TVecteur<T, n> operator+(const TVecteur<T, n>& other);
 		TVecteur<T, n>& operator+=(const TVecteur<T, n>& other);

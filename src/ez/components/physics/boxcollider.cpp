@@ -3,7 +3,7 @@
 ez::components::physics::BoxCollider::BoxCollider(GameObject* owner) : Component(owner)
 {
 	m_rect.SetPosition(m_owner->GetTransform());
-	m_rect.setOrigin(m_owner->GetSize() / 2.0f);
+	//m_rect.setOrigin(m_owner->GetSize() / 2.0f);
 }
 
 void ez::components::physics::BoxCollider::SetListObject(std::vector<GameObject*>& listobj)
@@ -11,7 +11,7 @@ void ez::components::physics::BoxCollider::SetListObject(std::vector<GameObject*
 	m_listobj = &listobj;
 }
 
-void ez::components::physics::BoxCollider::SetSize(const sf::Vector2f& size)
+void ez::components::physics::BoxCollider::SetSize(maths::TVecteur2<float>& size)
 {
 	m_rect.SetSize(size);
 	//m_rect.SetOrigin(size / 2.f);
@@ -75,11 +75,11 @@ bool ez::components::physics::BoxCollider::CheckCollisionAABB(GameObject& other)
 
 	if (target_box)
 	{
-		auto _target_pos = target_box->m_rect.getPosition();
-		auto _target_size = target_box->m_rect.getSize();
+		auto _target_pos = target_box->m_rect.GetPosition();
+		auto _target_size = target_box->m_rect.GetSize();
 
-		auto m_pos = m_rect.getPosition();
-		auto m_size = m_rect.getSize();
+		auto m_pos = m_rect.GetPosition();
+		auto m_size = m_rect.GetSize();
 
 		auto m_target_x = _target_pos.x - _target_size.x / 2;
 		auto m_target_y = _target_pos.y - _target_size.y / 2;
@@ -97,15 +97,15 @@ bool ez::components::physics::BoxCollider::CheckCollisionAABB(GameObject& other)
 
 void ez::components::physics::BoxCollider::ResolveCollisionAABB(GameObject& other)
 {
-	auto m_pos = m_rect.getPosition();
-	auto m_size = m_rect.getSize();
+	auto m_pos = m_rect.GetPosition();
+	auto m_size = m_rect.GetSize();
 
 	auto* comp = other.GetComponent<BoxCollider>();
 
 	if (comp)
 	{
-		auto m_target_pos = comp->m_rect.getPosition();
-		auto m_target_size = comp->m_rect.getSize();
+		auto m_target_pos = comp->m_rect.GetPosition();
+		auto m_target_size = comp->m_rect.GetSize();
 
 		auto distX = m_pos.x - m_target_pos.x;
 		auto distY = m_pos.y - m_target_pos.y;

@@ -3,6 +3,8 @@
 
 #include <ez/Component.h>
 
+#include <maths/maths.h>
+
 namespace ez
 {
 	class GameScene;
@@ -11,8 +13,8 @@ namespace ez
 	{
 	private:
 		const std::string m_name;
-		sf::Vector2f m_transform;
-		sf::Vector2f m_size;
+		maths::TVecteur2<float> m_transform;
+		maths::TVecteur2<float> m_size;
 
 		std::vector<Component*> m_components;
 
@@ -27,8 +29,8 @@ namespace ez
 		void Render(sf::RenderWindow& m_window);
 
 		const std::string& GetName() const;
-		sf::Vector2f& GetTransform();
-		sf::Vector2f& GetSize();
+		maths::TVecteur2<float>& GetTransform();
+		maths::TVecteur2<float>& GetSize();
 
 		template<typename T, typename... ARGS> T* AddComponent(ARGS... args)
 		{

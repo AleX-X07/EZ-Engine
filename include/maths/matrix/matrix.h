@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <type_traits>
 #include <initializer_list>
 #include <cmath>

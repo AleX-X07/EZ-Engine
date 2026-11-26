@@ -12,9 +12,6 @@
     <Filter Include="Fichiers d%27en-tête\ez">
       <UniqueIdentifier>{3d3d7bcf-e824-4897-b7cc-13267135af0a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers d%27en-tête\systeme">
-      <UniqueIdentifier>{bfbd1e0f-83ed-4355-9dd9-641ed1f1c593}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers d%27en-tête\ez\components">
       <UniqueIdentifier>{a9eed842-4bdf-4043-829d-a3baa9e40a4d}</UniqueIdentifier>
     </Filter>
@@ -55,17 +52,14 @@
     <Filter Include="Fichiers d%27en-tête\maths\shape">
       <UniqueIdentifier>{6eba44db-2018-4e01-8ff6-18af929b8595}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers d%27en-tête\imgui">
-      <UniqueIdentifier>{afd39236-3b91-42a3-a3d2-8fde1260885e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\imgui">
-      <UniqueIdentifier>{fe1364ad-5ea0-4807-ae7e-12d0b05f5d65}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers sources\maths">
       <UniqueIdentifier>{6340911b-c9c0-456d-8be7-3c7aa75e1749}</UniqueIdentifier>
     </Filter>
     <Filter Include="Fichiers sources\maths\shape">
       <UniqueIdentifier>{6426e8b7-acce-49e7-9676-19d2fef585ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\systeme">
+      <UniqueIdentifier>{82a1d356-7d66-45ea-a5c4-3b43a8ab9943}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -80,12 +74,6 @@
     </ClInclude>
     <ClInclude Include="include\ez\Component.h">
       <Filter>Fichiers d%27en-tête\ez</Filter>
-    </ClInclude>
-    <ClInclude Include="include\systeme\Systeme.h">
-      <Filter>Fichiers d%27en-tête\systeme</Filter>
-    </ClInclude>
-    <ClInclude Include="include\systeme\Input.h">
-      <Filter>Fichiers d%27en-tête\systeme</Filter>
     </ClInclude>
     <ClInclude Include="include\ez\components\graphics\renderer.h">
       <Filter>Fichiers d%27en-tête\ez\components\graphics</Filter>
@@ -123,35 +111,14 @@
     <ClInclude Include="include\maths\shape\rectangle.h">
       <Filter>Fichiers d%27en-tête\maths\shape</Filter>
     </ClInclude>
-    <ClInclude Include="external\imgui\imconfig.h">
-      <Filter>Fichiers d%27en-tête\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="external\imgui\imconfig-SFML.h">
-      <Filter>Fichiers d%27en-tête\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="external\imgui\imgui.h">
-      <Filter>Fichiers d%27en-tête\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="external\imgui\imgui_internal.h">
-      <Filter>Fichiers d%27en-tête\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="external\imgui\imgui-SFML.h">
-      <Filter>Fichiers d%27en-tête\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="external\imgui\imgui-SFML_export.h">
-      <Filter>Fichiers d%27en-tête\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="external\imgui\imstb_rectpack.h">
-      <Filter>Fichiers d%27en-tête\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="external\imgui\imstb_textedit.h">
-      <Filter>Fichiers d%27en-tête\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="external\imgui\imstb_truetype.h">
-      <Filter>Fichiers d%27en-tête\imgui</Filter>
-    </ClInclude>
     <ClInclude Include="include\maths\maths.h">
       <Filter>Fichiers d%27en-tête\maths</Filter>
+    </ClInclude>
+    <ClInclude Include="include\systeme\Input.h">
+      <Filter>Fichiers d%27en-tête\systeme</Filter>
+    </ClInclude>
+    <ClInclude Include="include\systeme\Systeme.h">
+      <Filter>Fichiers d%27en-tête\systeme</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -187,24 +154,6 @@
     </ClCompile>
     <ClCompile Include="src\ez\components\physics\Rigidbody.cpp">
       <Filter>Fichiers sources\ez\components\physics</Filter>
-    </ClCompile>
-    <ClCompile Include="external\imgui\imgui.cpp">
-      <Filter>Fichiers sources\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="external\imgui\imgui_demo.cpp">
-      <Filter>Fichiers sources\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="external\imgui\imgui_draw.cpp">
-      <Filter>Fichiers sources\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="external\imgui\imgui_tables.cpp">
-      <Filter>Fichiers sources\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="external\imgui\imgui_widgets.cpp">
-      <Filter>Fichiers sources\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="external\imgui\imgui-SFML.cpp">
-      <Filter>Fichiers sources\imgui</Filter>
     </ClCompile>
     <ClCompile Include="src\maths\shape\rectangle.cpp">
       <Filter>Fichiers sources\maths\shape</Filter>

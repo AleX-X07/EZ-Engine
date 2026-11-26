@@ -45,7 +45,13 @@ namespace maths
 	}
 
 	template<NumberT T, int n>
-	T& TVecteur<T, n>::operator[](const size_t& index)
+	T& TVecteur<T, n>::operator[](size_t index)
+	{
+		return m_vec[index];
+	}
+
+	template<NumberT T, int n>
+	T TVecteur<T, n>::operator[](size_t index) const
 	{
 		return m_vec[index];
 	}

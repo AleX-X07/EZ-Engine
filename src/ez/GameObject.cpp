@@ -45,12 +45,12 @@ const std::string& ez::GameObject::GetName() const
 	return m_name;
 }
 
-sf::Vector2f& ez::GameObject::GetTransform()
+maths::TVecteur2<float>& ez::GameObject::GetTransform()
 {
 	return m_transform;
 }
 
-sf::Vector2f& ez::GameObject::GetSize()
+maths::TVecteur2<float>& ez::GameObject::GetSize()
 {
 	return m_size;
 }

@@ -22,24 +22,26 @@ namespace maths
 		}
 	}
 
+	template<NumberT T>
+	TVecteur2<T>::TVecteur2(const TVecteur<T,2>& other) : TVecteur2<T>()
+	{
+		for (size_t i = 0; i < 2; i++)
+		{
+			this->m_vec[i] = other[i];
+		}
+	}
+
 	// Operator
 	template<NumberT T>
 	TVecteur2<T>& TVecteur2<T>::operator=(const TVecteur2<T>& other)
 	{
-		if (this == &other)
-		{
-			return *this;
-		}
-
-		for (size_t i = 0; i < n; i++)
-		{
-			this->m_vec[i] = other.m_vec[i];
-		}
-		return *this;)
+		TVecteur<T,2>::operator=(other);
+		return *this;
 	}
+
 	// Function
 	template<NumberT T>
-	T TVecteur2<T>::CrossProduct(const TVecteur2<T>& other) 
+	T TVecteur2<T>::CrossProduct(const TVecteur2<T>& other)
 	{
 		T res = T();
 		res = x * other.y - y * other.x;
