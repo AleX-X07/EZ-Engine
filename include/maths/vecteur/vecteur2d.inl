@@ -13,6 +13,30 @@ namespace maths
 		this->m_vec[1] = _y;
 	}
 
+	template<NumberT T>
+	TVecteur2<T>::TVecteur2(const TVecteur2<T>& other) : TVecteur2<T>()
+	{
+		for (size_t i = 0; i < 2; i++)
+		{
+			this->m_vec[i] = other.m_vec[i];
+		}
+	}
+
+	// Operator
+	template<NumberT T>
+	TVecteur2<T>& TVecteur2<T>::operator=(const TVecteur2<T>& other)
+	{
+		if (this == &other)
+		{
+			return *this;
+		}
+
+		for (size_t i = 0; i < n; i++)
+		{
+			this->m_vec[i] = other.m_vec[i];
+		}
+		return *this;)
+	}
 	// Function
 	template<NumberT T>
 	T TVecteur2<T>::CrossProduct(const TVecteur2<T>& other) 
@@ -27,13 +51,13 @@ namespace maths
 	{
 		auto rad = maths::DegreeToRad(angle);
 
-		maths::TMatrix<T, 1, 2> vec_to_mat = { { x,y } };
+		maths::TMatrix<T, 2, 1> vec_to_mat = { { x },{ y } };
 		maths::TMatrix<T, 2, 2> mat_rotate_2d =
 		{
-			{ T(std::cos(rad)), T(std::sin(rad)) },
-			{ T(-std::sin(rad)), T(std::cos(rad)) }
+			{ T(std::cos(rad)), T(-std::sin(rad)) },
+			{ T(std::sin(rad)), T(std::cos(rad)) }
 		};
-		auto res = vec_to_mat * mat_rotate_2d;
+		auto res = mat_rotate_2d * vec_to_mat;
 		x = res[0];
 		y = res[1];
 		return *this;

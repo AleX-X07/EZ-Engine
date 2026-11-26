@@ -52,6 +52,21 @@
     <Filter Include="Fichiers sources\systeme">
       <UniqueIdentifier>{b0d3ec8f-eab5-4229-8a65-ffe047e2f5d4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\maths\shape">
+      <UniqueIdentifier>{6eba44db-2018-4e01-8ff6-18af929b8595}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\imgui">
+      <UniqueIdentifier>{afd39236-3b91-42a3-a3d2-8fde1260885e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\imgui">
+      <UniqueIdentifier>{fe1364ad-5ea0-4807-ae7e-12d0b05f5d65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\maths">
+      <UniqueIdentifier>{6340911b-c9c0-456d-8be7-3c7aa75e1749}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\maths\shape">
+      <UniqueIdentifier>{6426e8b7-acce-49e7-9676-19d2fef585ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ez\Game.h">
@@ -75,7 +90,7 @@
     <ClInclude Include="include\ez\components\graphics\renderer.h">
       <Filter>Fichiers d%27en-tête\ez\components\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="include\ez\components\physics\boxcollider.h">
+    <ClInclude Include="include\ez\components\physics\BoxCollider.h">
       <Filter>Fichiers d%27en-tête\ez\components\physics</Filter>
     </ClInclude>
     <ClInclude Include="include\ez\components\graphics\camera.h">
@@ -102,6 +117,42 @@
     <ClInclude Include="include\maths\globals.h">
       <Filter>Fichiers d%27en-tête\maths</Filter>
     </ClInclude>
+    <ClInclude Include="include\ez\components\physics\Rigidbody.h">
+      <Filter>Fichiers d%27en-tête\ez\components\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\maths\shape\rectangle.h">
+      <Filter>Fichiers d%27en-tête\maths\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imconfig.h">
+      <Filter>Fichiers d%27en-tête\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imconfig-SFML.h">
+      <Filter>Fichiers d%27en-tête\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imgui.h">
+      <Filter>Fichiers d%27en-tête\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imgui_internal.h">
+      <Filter>Fichiers d%27en-tête\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imgui-SFML.h">
+      <Filter>Fichiers d%27en-tête\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imgui-SFML_export.h">
+      <Filter>Fichiers d%27en-tête\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imstb_rectpack.h">
+      <Filter>Fichiers d%27en-tête\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imstb_textedit.h">
+      <Filter>Fichiers d%27en-tête\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imstb_truetype.h">
+      <Filter>Fichiers d%27en-tête\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="include\maths\maths.h">
+      <Filter>Fichiers d%27en-tête\maths</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ez\Game.cpp">
@@ -125,7 +176,7 @@
     <ClCompile Include="src\ez\components\graphics\renderer.cpp">
       <Filter>Fichiers sources\ez\components\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="src\ez\components\physics\boxcollider.cpp">
+    <ClCompile Include="src\ez\components\physics\BoxCollider.cpp">
       <Filter>Fichiers sources\ez\components\physics</Filter>
     </ClCompile>
     <ClCompile Include="src\ez\components\graphics\camera.cpp">
@@ -133,6 +184,30 @@
     </ClCompile>
     <ClCompile Include="src\mainloop.cpp">
       <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ez\components\physics\Rigidbody.cpp">
+      <Filter>Fichiers sources\ez\components\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="external\imgui\imgui.cpp">
+      <Filter>Fichiers sources\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="external\imgui\imgui_demo.cpp">
+      <Filter>Fichiers sources\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="external\imgui\imgui_draw.cpp">
+      <Filter>Fichiers sources\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="external\imgui\imgui_tables.cpp">
+      <Filter>Fichiers sources\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="external\imgui\imgui_widgets.cpp">
+      <Filter>Fichiers sources\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="external\imgui\imgui-SFML.cpp">
+      <Filter>Fichiers sources\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\maths\shape\rectangle.cpp">
+      <Filter>Fichiers sources\maths\shape</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

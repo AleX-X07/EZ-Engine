@@ -31,31 +31,28 @@ namespace maths
 		float rad = maths::DegreeToRad(angle);
 		auto temp = axe.Normalize();
 
-		TVecteur3<float> axe_norm = { temp[0], temp[1], temp[2] };
+		float kx = static_cast<float>(temp[0]);
+		float ky = static_cast<float>(temp[1]);
+		float kz = static_cast<float>(temp[2]);
 
-		TMatrix<float, 3, 3> P =
+		float c = std::cos(rad);
+		float s = std::sin(rad);
+		float t = 1.0f - c;
+
+		TMatrix<float, 3, 3> R =
 		{
-			{ axe_norm.x * axe_norm.x, axe_norm.x * axe_norm.y, axe_norm.x * axe_norm.z },
-			{ axe_norm.x * axe_norm.y, axe_norm.y * axe_norm.y, axe_norm.y * axe_norm.z },
-			{ axe_norm.x * axe_norm.z, axe_norm.y * axe_norm.z, axe_norm.z * axe_norm.z}
-		};
-		TMatrix<float, 3, 3> I = maths::TMatrix<float, 3, 3>::Identity();
-		TMatrix<float, 3, 3> Q =
-		{
-			{ 0, -axe_norm.z, axe_norm.y },
-			{ axe_norm.z, 0, -axe_norm.x},
-			{-axe_norm.y, axe_norm.x, 0}
+			{ c + t * kx * kx,       t * kx * ky - s * kz,   t * kx * kz + s * ky },
+			{ t * kx * ky + s * kz,  c + t * ky * ky,        t * ky * kz - s * kx },
+			{ t * kx * kz - s * ky,  t * ky * kz + s * kx,   c + t * kz * kz }
 		};
 
-		TMatrix<float, 1, 3> vec_to_math = { { x, y, z } };
+		TMatrix<float, 3, 1> vec_to_math = { { x },{ y },{ z } };
 
-		TMatrix<float, 3, 3> val = P + (I - P) * std::cos(rad) + Q * std::sin(rad);
+		auto res = R * vec_to_math;
 
-		auto res = vec_to_math * val;
-
-		this->x = T(res[0]);
-		this->y = T(res[1]);
-		this->z = T(res[2]);
+		x = T(res[0]);
+		y = T(res[1]);
+		z = T(res[2]);
 		return *this;
 	}
 }

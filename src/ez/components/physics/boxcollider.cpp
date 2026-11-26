@@ -2,7 +2,7 @@
 
 ez::components::physics::BoxCollider::BoxCollider(GameObject* owner) : Component(owner)
 {
-	m_rect.setPosition(m_owner->GetTransform());
+	m_rect.SetPosition(m_owner->GetTransform());
 	m_rect.setOrigin(m_owner->GetSize() / 2.0f);
 }
 
@@ -13,17 +13,17 @@ void ez::components::physics::BoxCollider::SetListObject(std::vector<GameObject*
 
 void ez::components::physics::BoxCollider::SetSize(const sf::Vector2f& size)
 {
-	m_rect.setSize(size);
-	m_rect.setOrigin(size / 2.f);
+	m_rect.SetSize(size);
+	//m_rect.SetOrigin(size / 2.f);
 }
 
-void ez::components::physics::BoxCollider::Debug()
-{
-	debug = true;
-	m_rect.setFillColor(sf::Color::Transparent);
-	m_rect.setOutlineColor(sf::Color::Green);
-	m_rect.setOutlineThickness(2.f);
-}
+//void ez::components::physics::BoxCollider::Debug()
+//{
+//	debug = true;
+//	m_rect.setFillColor(sf::Color::Transparent);
+//	m_rect.setOutlineColor(sf::Color::Green);
+//	m_rect.setOutlineThickness(2.f);
+//}
 
 bool ez::components::physics::BoxCollider::OnTriggerEnter(GameObject& other)
 {
@@ -32,7 +32,7 @@ bool ez::components::physics::BoxCollider::OnTriggerEnter(GameObject& other)
 
 void ez::components::physics::BoxCollider::Update(float dt, systeme::Systeme& m_systeme)
 {
-	m_rect.setPosition(m_owner->GetTransform());
+	m_rect.SetPosition(m_owner->GetTransform());
 
 	if (isStatic)
 	{
@@ -63,10 +63,10 @@ void ez::components::physics::BoxCollider::Update(float dt, systeme::Systeme& m_
 
 void ez::components::physics::BoxCollider::Render(sf::RenderWindow& m_window)
 {
-	if (debug)
-	{
-		m_window.draw(m_rect);
-	}
+	//if (debug)
+	//{
+	//	m_window.draw(m_rect);
+	//}
 }
 
 bool ez::components::physics::BoxCollider::CheckCollisionAABB(GameObject& other)

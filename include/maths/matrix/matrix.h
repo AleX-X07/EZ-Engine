@@ -70,8 +70,6 @@ namespace maths
 		TMatrix<T, line, column> Inverse();
 		static TMatrix<T, line, column> Identity();
 		TMatrix<T, column, line> Transpose() const;
-		TMatrix<T, line + 1, column + 1> UpgradeMatrix();
-		TMatrix<T, line - 1, column - 1> DowngradeMatrix();
 
 		friend std::ostream& operator<<(std::ostream& os, const TMatrix<T, line, column>& vec)
 		{

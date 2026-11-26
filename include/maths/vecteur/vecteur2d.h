@@ -15,6 +15,10 @@ namespace maths
 		// Constructor - Destructeur
 		TVecteur2();
 		TVecteur2(const T& _x, const T& _y);
+		TVecteur2(const TVecteur2<T>& other);
+
+		// Operator
+		TVecteur2<T>& operator=(const TVecteur2<T>& other);
 
 		// Function
 		T CrossProduct(const TVecteur2<T>& other);

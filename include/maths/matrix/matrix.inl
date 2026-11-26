@@ -386,33 +386,4 @@ namespace maths
 		}
 		return res;
 	}
-
-	template<NumberT T, int line, int column>
-	TMatrix<T, line + 1, column + 1> TMatrix<T, line, column>::UpgradeMatrix()
-	{
-		TMatrix<T, line + 1, column + 1> res = TMatrix<T, line + 1, column + 1>::Identity();
-		for (size_t i = 0; i < line; i++)
-		{
-			for (size_t k = 0; k < column; k++)
-			{
-				res[k + (column + 1) * i] = m_vec[k + column * i];
-			}
-		}
-		return res;
-	}
-
-	template<NumberT T, int line, int column>
-	TMatrix<T, line - 1, column - 1> TMatrix<T, line, column>::DowngradeMatrix()
-	{
-		static_assert(line != 0 && column != 0);
-		TMatrix<T, line - 1, column - 1> res = TMatrix<T, line - 1, column - 1>::Identity();
-		for (size_t i = 0; i < line; i++)
-		{
-			for (size_t k = 0; k < column; k++)
-			{
-				res[k + (column - 1) * i] = m_vec[k + column * i];
-			}
-		}
-		return res;
-	}
 }

@@ -5,12 +5,14 @@
 
 #include <ez/Component.h>
 
+#include <maths/maths.h>
+
 namespace ez::components::physics
 {
 	class BoxCollider final : public Component
 	{
 	private:
-		sf::RectangleShape m_rect;
+		maths::Rectangle m_rect;
 
 		std::vector<GameObject*>* m_listobj = nullptr;
 
@@ -22,12 +24,12 @@ namespace ez::components::physics
 
 	public:
 		BoxCollider(GameObject* owner);
-		~BoxCollider() = default;
+		virtual ~BoxCollider() = default;
 
 		void SetListObject(std::vector<GameObject*>& listobj);
 		void SetSize(const sf::Vector2f& size);
 
-		void Debug();
+		//void Debug();
 
 		// Need func OnTrigger enter/leave/stay
 		bool OnTriggerEnter(GameObject& other);
