@@ -43,10 +43,7 @@ void ez::GameScene::Render(sf::RenderWindow& m_window)
 	{
 		for (auto* obj : m_objects)
 		{
-			if (auto* comp = obj->GetComponent<ez::components::graphics::Renderer>())
-			{
-				m_render[comp->GetOrder()].push_back(obj);
-			}
+			m_render[obj->GetOrder()].push_back(obj);
 		}
 		sort = true;
 	}

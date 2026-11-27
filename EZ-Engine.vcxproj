@@ -20,28 +20,42 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ez\Component.cpp" />
-    <ClCompile Include="src\ez\components\graphics\camera.cpp" />
-    <ClCompile Include="src\ez\components\graphics\renderer.cpp" />
+    <ClCompile Include="src\ez\components\graphics\Camera.cpp" />
+    <ClCompile Include="src\ez\components\graphics\Renderer.cpp" />
     <ClCompile Include="src\ez\components\physics\BoxCollider.cpp" />
     <ClCompile Include="src\ez\components\physics\Rigidbody.cpp" />
     <ClCompile Include="src\ez\Game.cpp" />
     <ClCompile Include="src\ez\GameObject.cpp" />
     <ClCompile Include="src\ez\GameScene.cpp" />
-    <ClCompile Include="src\mainloop.cpp" />
+    <ClCompile Include="src\imgui\imgui-SFML.cpp" />
+    <ClCompile Include="src\imgui\imgui.cpp" />
+    <ClCompile Include="src\imgui\imgui_draw.cpp" />
+    <ClCompile Include="src\imgui\imgui_tables.cpp" />
+    <ClCompile Include="src\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="src\MainLoop.cpp" />
     <ClCompile Include="src\maths\shape\rectangle.cpp" />
     <ClCompile Include="src\systeme\Input.cpp" />
     <ClCompile Include="src\systeme\Systeme.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ez\Component.h" />
-    <ClInclude Include="include\ez\components\graphics\camera.h" />
-    <ClInclude Include="include\ez\components\graphics\renderer.h" />
+    <ClInclude Include="include\ez\components\graphics\Camera.h" />
+    <ClInclude Include="include\ez\components\graphics\Renderer.h" />
     <ClInclude Include="include\ez\components\physics\BoxCollider.h" />
     <ClInclude Include="include\ez\components\physics\Rigidbody.h" />
     <ClInclude Include="include\ez\Game.h" />
     <ClInclude Include="include\ez\GameObject.h" />
     <ClInclude Include="include\ez\GameScene.h" />
-    <ClInclude Include="include\mainloop.h" />
+    <ClInclude Include="include\imgui\imconfig-SFML.h" />
+    <ClInclude Include="include\imgui\imconfig.h" />
+    <ClInclude Include="include\imgui\imgui-SFML.h" />
+    <ClInclude Include="include\imgui\imgui-SFML_export.h" />
+    <ClInclude Include="include\imgui\imgui.h" />
+    <ClInclude Include="include\imgui\imgui_internal.h" />
+    <ClInclude Include="include\imgui\imstb_rectpack.h" />
+    <ClInclude Include="include\imgui\imstb_textedit.h" />
+    <ClInclude Include="include\imgui\imstb_truetype.h" />
+    <ClInclude Include="include\MainLoop.h" />
     <ClInclude Include="include\maths\globals.h" />
     <ClInclude Include="include\maths\maths.h" />
     <ClInclude Include="include\maths\matrix\matrix.h" />

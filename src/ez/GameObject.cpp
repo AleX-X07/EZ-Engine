@@ -18,6 +18,16 @@ ez::GameObject::~GameObject()
 	}
 }
 
+void ez::GameObject::SetOrder(int order)
+{
+	m_order = order;
+}
+
+int ez::GameObject::GetOrder()
+{
+	return m_order;
+}
+
 void ez::GameObject::Update(float dt, systeme::Systeme& m_systeme)
 {
 	for (auto& comp : m_components)

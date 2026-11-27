@@ -1,4 +1,5 @@
 #pragma once
+#include <SFML/Graphics.hpp>
 
 #include <maths/vecteur/vecteur.h>
 
@@ -17,6 +18,7 @@ namespace maths
 		TVecteur2(const T& _x, const T& _y);
 		TVecteur2(const TVecteur2<T>& other);
 		TVecteur2(const TVecteur<T,2>& other);
+		TVecteur2(const sf::Vector2f& other);
 
 		// Operator
 		TVecteur2<T>& operator=(const TVecteur2<T>& other);

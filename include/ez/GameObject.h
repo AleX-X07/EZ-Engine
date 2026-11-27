@@ -20,10 +20,15 @@ namespace ez
 
 		GameScene& m_current_scene;
 
+		int m_order = 0;
+
 	public:
 
 		GameObject(GameScene& current_scene, const std::string& name);
 		~GameObject();
+
+		void SetOrder(int order);
+		int GetOrder();
 
 		void Update(float dt, systeme::Systeme& m_systeme);
 		void Render(sf::RenderWindow& m_window);

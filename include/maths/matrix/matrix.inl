@@ -363,12 +363,9 @@ namespace maths
 	TMatrix<T, line, column> TMatrix<T, line, column>::Identity()
 	{
 		TMatrix<T, line, column> res;
-		for (size_t k = 0; k < column; k++)
+		for (size_t i = 0; i < line; i++)
 		{
-			for (size_t i = 0; i < line; i++)
-			{
-				res[i + column * i] = 1;
-			}
+			res[i + column * i] = 1;
 		}
 		return res;
 	}

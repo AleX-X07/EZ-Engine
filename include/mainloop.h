@@ -14,6 +14,7 @@ private:
 
 	sf::Clock m_clock;
 	float dt = 0.0f;
+	sf::Time delatTime;
 
 	systeme::Systeme m_systeme;
 	ez::Game& m_game;
@@ -22,7 +23,7 @@ private:
 
 private:
 	MainLoop(sf::RenderWindow& window, ez::Game& game);
-	~MainLoop() = default;
+	~MainLoop();
 
 	void UpdateEvent();
 	void UpdateTime();

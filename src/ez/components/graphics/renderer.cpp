@@ -38,11 +38,6 @@ void ez::components::graphics::Renderer::SetColor(const sf::Color& color)
 	m_rect.setFillColor(m_color);
 }
 
-void ez::components::graphics::Renderer::SetOrder(const int order)
-{
-	m_order = order;
-}
-
 const sf::Texture* ez::components::graphics::Renderer::GetTexture() const
 {
 	return m_texture;
@@ -56,11 +51,6 @@ const sf::Color& ez::components::graphics::Renderer::GetColor() const
 const sf::RectangleShape& ez::components::graphics::Renderer::GetRect() const
 {
 	return m_rect;
-}
-
-const int& ez::components::graphics::Renderer::GetOrder() const
-{
-	return m_order;
 }
 
 void ez::components::graphics::Renderer::Update(float dt, systeme::Systeme& m_systeme)
